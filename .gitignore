@@ -1,0 +1,9 @@
+#Bower輸出的框架檔案(合併前)
+.tmp/
+
+#Bower & Nodejs 的模組包
+bower_components/
+node_modules/
+
+#輸出檔案的資料夾
+public/
