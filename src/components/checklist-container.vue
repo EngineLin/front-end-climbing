@@ -10,7 +10,7 @@
                            animation: 150,
                            handle: '.js-drag-bar',
                            scroll: true,
-                           scrollSensitivity: 30,
+                           scrollSensitivity: 60,
                            scrollSpeed: 15 }">
 
       <!-- // 利用 v-for 遍歷accountData中指定的專案代碼 -->

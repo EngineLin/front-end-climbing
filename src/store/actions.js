@@ -11,6 +11,9 @@ export default {
           "accountName": value.accountName,
           "projectData": value.projectData
         }
+        if (context.state.accountData.projectData[0] !== context.state.checklistBaseData) {
+          accountData.projectData.push(context.state.accountData.projectData[0]);
+        }
         context.commit('updateAccountData', accountData);
       })
     } else {

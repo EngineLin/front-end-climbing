@@ -85,6 +85,7 @@
         isAddNote: false,
         hasAddTextarea : false,
         hasAddBox: this.item.note ? false : true,
+        deg: '0deg',
       }
     },
     computed: {
@@ -150,11 +151,11 @@
       },
 
       openDetailBox: function() {
-        // let deg = deg === '180deg' ? '0deg' : '180deg';
-        // $(`.detail-btn-${this.index}`).css({'-webkit-transform' : `rotate(${deg})`,
-        //                                     '-moz-transform' : `rotate(${deg})`,
-        //                                     '-ms-transform' : `rotate(${deg})`,
-        //                                     'transform' : `rotate(${deg})`});
+        this.deg = this.deg === '0deg' ? '180deg' : '0deg';
+        $(`.detail-btn-${this.index}`).css({'-webkit-transform' : `rotate(${deg})`,
+                                            '-moz-transform' : `rotate(${deg})`,
+                                            '-ms-transform' : `rotate(${deg})`,
+                                            'transform' : `rotate(${deg})`});
         if (this.hasAddBox) {
           $(`#add-note-box-${this.index}`).slideToggle("slow");
         }
