@@ -27,7 +27,10 @@
         let password = $('#password').val();
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(confirmationResult => {
-          let payload = { loginState: true, fec_id: confirmationResult.uid };
+          let payload = {
+            loginState: true,
+            fec_id: confirmationResult.uid
+          };
           this.$store.commit('updateFECId', payload);
           this.$store.dispatch('updateAccountData');
           this.$router.push('checklist')

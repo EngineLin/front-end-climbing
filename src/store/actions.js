@@ -3,13 +3,27 @@ import firebase from 'firebase'
 
 export default {
   updateAccountData: function(context) {
+    let value;
+    let accountData;
+    let tempProject = context.state.accountData.projectData[0];
     if (localStorage.fec_id) {
       console.log('login and set data')
       firebase.database().ref(`accountData/${localStorage.fec_id}`).once('value').then(snapshot => {
-        let value = snapshot.val();
-        let accountData = {
-          "accountName": value.accountName,
-          "projectData": value.projectData
+        value = snapshot.val();
+        if (!value) {
+          accountData = {
+            "accountName": 'new User',
+            "projectData": [context.state.projectBaseData]
+          }
+        } else {
+          accountData = {
+            "accountName": value.accountName,
+            "projectData": value.projectData || []
+          }
+        }
+        if (tempProject !== context.state.projectBaseData) {
+          console.log('add tempProject')
+          accountData.projectData.push(tempProject);
         }
         context.commit('updateAccountData', accountData);
       })

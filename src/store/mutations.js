@@ -23,6 +23,10 @@ export default {
   },
 
   addNewProject: function(state) {
+    if (!state.loginState) {
+      alert('沒有登入帳號無法開啟第二個專案喔!')
+      return;
+    }
     if (!state.accountData.projectData) {
       state.accountData.projectData = [];
     }
