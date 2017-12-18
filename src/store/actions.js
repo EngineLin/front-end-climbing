@@ -25,6 +25,9 @@ export default {
           console.log('add tempProject')
           accountData.projectData.push(tempProject);
         }
+        if (context.state.accountData.projectData[0] !== context.state.checklistBaseData) {
+          accountData.projectData.push(context.state.accountData.projectData[0]);
+        }
         context.commit('updateAccountData', accountData);
       })
     } else {
