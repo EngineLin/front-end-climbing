@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import overviewComponent from './../components/overview.vue'
 import checklistComponent from './../components/checklist.vue'
-import resourceComponent from './../components/resource.vue'
+import manualComponent from './../components/manual.vue'
 import loginComponent from './../components/login.vue'
 import signinComponent from './../components/signin.vue'
 
@@ -26,9 +26,9 @@ export default new Router({
       component: checklistComponent
     },
     {
-      path: '/resource',
-      name: 'resource',
-      component: resourceComponent
+      path: '/manual',
+      name: 'manual',
+      component: manualComponent
     },
     {
       path: '/login',

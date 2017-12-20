@@ -102,7 +102,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: false
+      minimize: true
     })
   ])
 }

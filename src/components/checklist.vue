@@ -12,10 +12,12 @@
     </div>
     <img src="./../images/save.png" id="save-sign" alt="Save">
     <div class="save-icon" @click='saveData'></div>
+    <div class="infoBox bg-danger"></div>
   </div>
 </template>
 
 <script>
+import $ from 'jquery'
 import navigatorContainer from './navigator-container.vue'
 import checklistContainer from './checklist-container.vue'
 import { mapGetters } from 'vuex'
@@ -41,6 +43,14 @@ export default {
   created: function() {
     // 點進 checklist 之後就在第一時間將預設的 accountData 做修改
     this.$store.dispatch('updateAccountData');
+
+    // 綁定 infoBox 跟著滑鼠光標
+    $(window).on('mousemove', (e) => {
+      let left = e.clientX
+      let top = e.clientY
+      $('.infoBox').css({ 'left': `${left - 100}px`, 'top': `${top - 80}px`})
+      $('.infoBox').fadeOut(300)
+    })
   },
 }
 </script>
@@ -86,7 +96,7 @@ export default {
   #save-sign {
     opacity: 0;
     transform: translateY(20px);
-    transition: 1.5s;
+    transition: 0.8s;
     position: fixed;
     right: 5%;
     bottom: calc(5% + 60px);
@@ -105,11 +115,20 @@ export default {
     width: 60px;
     height: 60px;
     color: blue;
-    transition: 1s;
+    transition: 0.5s;
   }
   .save-icon:hover {
     cursor: pointer;
     transform: translateY(-10px)
+  }
+
+  .infoBox {
+    display: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border-radius: 5px;
   }
 
   .col-3 {

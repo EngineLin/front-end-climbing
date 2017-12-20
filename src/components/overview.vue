@@ -23,8 +23,8 @@
           <div class="row row-fd-column">
             <h2>Who is author of this checklist？</h2>
             <p class="text-secondary">
-              這份清單的作者是 David Dias，專案發表在他的 <a href='https://github.com/thedaviddias/Front-End-Checklist'>GitHub 帳號</a>。<br>
-              他的個人帳號 <a href="https://github.com/thedaviddias">thedaviddias</a> 還有許多超棒的專案。目前這一份開發清單在 GitHub 非常火熱。
+              這份清單的作者是 David Dias，專案發表在他的 <a href='https://github.com/thedaviddias/Front-End-Checklist' target="_blank">GitHub 帳號</a>。<br>
+              他的個人帳號 <a href="https://github.com/thedaviddias" target="_blank">thedaviddias</a> 還有許多超棒的專案。目前這一份開發清單在 GitHub 非常火熱。
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="row row-fd-column">
             <h2>Who made this webapp？</h2>
             <p class="text-secondary">
-              小弟是剛進入前端業界的新人 Engine Lin，之前翻譯了 David Dias 的前端開發清單有興趣可以點 <a href="https://github.com/EngineLin/Front-End-Checklist">這個連結</a> 看我的翻譯。<br>
+              小弟是剛進入前端業界的新人 Engine Lin，之前翻譯了 David Dias 的前端開發清單有興趣可以點 <a href="https://github.com/EngineLin/Front-End-Checklist" target="_blank">這個連結</a> 看我的翻譯。<br>
               有鑑於這份列表詳細豐富卻不便於使用，所以開發了一個針對專案方便使用與控管的應用網頁。<br>
               另一方面，也是累積第三方框架的使用經驗。<br>
               該應用使用了 Vue.js、Vue-cli + Webpack、Vue-router、Vuex 以及 Firebase 的相關技術。
@@ -54,7 +54,7 @@
   export default {
     methods: {
       linkToGitHub: function() {
-        window.location.href = 'https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap.css';
+        window.location.href = 'https://github.com/EngineLin/front-end-climbing';
       }
     },
     data: function() {
@@ -69,11 +69,11 @@
       $('.js-container').scroll(function() {
         if ($('.banner-2').offset().top <= this.clientHeight * 0.8 && !hasShowBanner2) {
           hasShowBanner2 = true;
-          $('.banner-2').css('transform', 'translateY(0px)');
+          $('.banner-2').css('transform', 'translateY(0)');
           $('.banner-2').css('opacity', '1');
         } else if ($('.banner-3').offset().top <= this.clientHeight && !hasShowBanner3) {
           hasShowBanner3 = true;
-          $('.banner-3').css('transform', 'translateY(0px)')
+          $('.banner-3').css('transform', 'translateY(0)')
           $('.banner-3').css('opacity', '1');
         }
       })

@@ -1,17 +1,19 @@
 <template>
   <header class="bg-warning">
-    <a href="#" style="height: 80px; width: auto"><img src="./../../images/logo.png" alt="" style="height: 300px; transform: translateY(-120px)"></a>
+    <a href="#" @click="clickLogo($event)">
+      <img src="./../../images/logo.png" alt="Logo image">
+    </a>
     
     <div class="header-navbar">
       <ul class="header-navbar-ul">
         <router-link to="/overview" class="header-navbar-btn">Overview</router-link>
         <router-link to="/checklist" class="header-navbar-btn">Project</router-link>
-        <router-link to="/resource" class="header-navbar-btn">Resource</router-link>
+        <router-link to="/manual" class="header-navbar-btn">Manual</router-link>
         <a href="#" id="logout" class="bg-secondary" v-if="isLogIn" @click="logOut">Log-out</a>
         <router-link to="/login" id="router-link-login" class="header-navbar-btn" v-else>Log-in</router-link>
       </ul>
     </div>
-    <div id="header-avater"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+    <div id="header-avater"><i class="fa fa-user-circle-o" aria-hidden="true" @click="clickVisitorAvater"></i></div>
   </header>
 </template>
 
@@ -33,8 +35,8 @@
         .then(() => {
           let payload = { loginState: false, fec_id: '' }
           this.$store.commit('updateFECId', payload)
-          this.$store.dispatch('updateAccountData');
-          this.$router.push('checklist');
+          this.$store.dispatch('updateAccountData')
+          this.$router.push('checklist')
           alert('您已經成功登出')
         })
         
@@ -42,6 +44,13 @@
           alert(`登出出現問題: ${error}`)
         })
       },
+      clickVisitorAvater: function() {
+        this.$router.push('login')
+      },
+      clickLogo: function(e) {
+        e.preventDefault()
+        this.$router.push('overview')
+      }
     },
     computed: {
       isLogIn: function() {
@@ -64,6 +73,12 @@
   a {
     color: black;
     text-decoration: none;
+    height: 100px;
+    width: auto;
+  }
+
+  a img {
+    height: 100%;
   }
 
   .header-title {
@@ -122,5 +137,8 @@
     margin: 0 80px;
     font-size: 80px;
     line-height: 100px;
+  }
+  #header-avater:hover {
+    cursor: pointer;
   }
 </style>

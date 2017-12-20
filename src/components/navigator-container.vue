@@ -1,10 +1,10 @@
 <template>
   <div class="navigator-wrap">
     <div class="navigator-project-body">
-      <div class="navigator-project-item" :id="[`project-${index}`]" v-for=" (item, index) in projectData" v-if="index != projectNum">
+      <div class="navigator-project-item" :id="[`project-${index}`]" :class="index == projectNum ? 'active' : ''" v-for=" (item, index) in projectData">
         <div class="project-box">
           <a href="#" @click="changeProject(index)"><div>{{ projectData[index].projectName }}</div></a>
-          <div class="delete-btn"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteProject()" @click="deleteAlert()"></i></div>
+          <div class="delete-btn"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteProject" @click="deleteAlert"></i></div>
         </div>
       </div>
       <slot>
@@ -39,8 +39,8 @@
         'listData'
       ]),
       projectData: function() {
-        console.log('navigator projectData changed')
-        console.log(this)
+        // console.log('navigator projectData changed')
+        // console.log(this)
         return this.accountData.projectData;
       },
       bodyHeight: function() {
@@ -59,15 +59,15 @@
       slide2Item: function(index, e) {
         e.preventDefault();
         let scrollTop = $(`#hash${index}`)[0].offsetTop;
-        $('#js-content').animate({ scrollTop: `${scrollTop - 10}`}, 1000, 'linear');
+        $('#js-content').animate({ scrollTop: `${scrollTop - 10}`}, 500, 'linear');
       },
 
-      deleteAlert: function() {
-
+      deleteAlert: function(e) {
+        $('.infoBox').text('雙擊以左鍵以刪除資料。')
+        $('.infoBox').fadeIn(300)
       },
 
       deleteProject: function() {
-        // $(`#project-${this.index}`).hide(300);
         this.$store.commit('deleteProject', this.index)
       },
     },
@@ -118,6 +118,9 @@
     border-radius: 5px;
     border: 1px solid black;
   }
+  .navigator-project-item.active {
+    border: 2px solid red;
+  }
   .project-box {
     display: flex;
     justify-content: center;
@@ -132,7 +135,14 @@
   }
   a:hover {
     cursor: pointer;
-    background-color: pink; 
+  }
+
+  .detail-link-box a {
+    color: blue;
+  }
+  .detail-link-box a:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   .delete-btn {

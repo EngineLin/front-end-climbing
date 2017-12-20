@@ -48,7 +48,6 @@
 <style scoped>
   .login-from {
     width: 20%;
-    padding: 300px 0;
     display: flex;
     justify-content: center;
     align-items: center;

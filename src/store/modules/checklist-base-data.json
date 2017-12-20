@@ -7,7 +7,7 @@
         "level": "High",
         "description": "Doctype 是 HTML5，同時要放在 HTML 頁面的最上面。",
         "example": "<p>&#60!-- Doctype HTML5 --&#62</p><p>&#60!doctype html&#62</p>",
-        "link": "📖<a href='https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding'>決定字符編碼 - HTML5 W3C</a>"
+        "link": "📖<a target='blank' href='https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding'>決定字符編碼 - HTML5 W3C</a>"
       },
       "i2": {
         "title": "Charset (字符)",
@@ -21,13 +21,13 @@
         "level": "Medium",
         "description": "X-UA-Compatible meta 標籤存在。",
         "example": "<p>&#60!-- 教導 Internet Explorer 使用最新的渲染引擎 --&#62</p><p>&#60meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\"&#62",
-        "link": "📖<a href='https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx'>指定文件的繼承模式 (Internet Explorer)</a>"
+        "link": "📖<a target='blank' href='https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx'>指定文件的繼承模式 (Internet Explorer)</a>"
       },
       "i4": {
         "title": "Viewport (視點)",
         "level": "High",
         "description": "正確宣告 viewport。",
-        "example": "<p>&#60!-- Viewport 用在響應式網頁設計 --&#62</p><p>🛠&#60meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"&#62",
+        "example": "<p>&#60!-- Viewport 用在響應式網頁設計 --&#62</p><p>&#60meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"&#62",
         "link": ""
       },
       "i5": {
@@ -35,42 +35,42 @@
         "level": "High",
         "description": "所有頁面都有使用一個 title (SEO: Google 會計算 title 上使用的字符寬度，只會偵測到 472px ~ 482px 之間。平均最大值是 55 個字符)。",
         "example": "<p>&#60!-- 檔案標題 --&#62</p><p>&#60title&#62Page Title less than 65 characters&#60/title&#62</p>",
-        "link": "📖<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title'>Title - HTML - MDN</a><br>🛠<a href='https://www.sistrix.com/serp-snippet-generator/'>SERP Snippet Generator</a>"
+        "link": "📖<a target='blank' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title'>Title - HTML - MDN</a><br>🛠<a target='blank' href='https://www.sistrix.com/serp-snippet-generator/'>SERP Snippet Generator</a>"
       },
       "i6": {
         "title": "Description (敘述)",
         "level": "High",
         "description": "有設置 meta description，每個頁面只有一個且長度不能超過150字元。",
         "example": "<p>&#60!-- Meta Description --&#62</p><p>&#60meta name=\"description\" content=\"Description of the page less than 150 characters\"&#62</p>",
-        "link": "📖<a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description'>Meta Description - HTML - MDN</a>"
+        "link": "📖<a target='blank' href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description'>Meta Description - HTML - MDN</a>"
       },
       "i7": {
         "title": " Favicons",
         "level": "Medium",
         "description": "每一個 favicon 都需要創立且被正確展示。如果你只有一個 favicon.ico，可以將它放在網頁最底層的檔案。通常你不需要對他加以修改。無論如何，這依舊是個好例子，可以跟下方的例子互相呼應。現在比起.icon比較推薦 PNG 的檔案格式。(大小最少需要: 32x32px)",
         "example": "<p>&#60!-- 一般的 favicon --&#62</p><p>&#60link rel=\"icon\" type=\"image/x-icon\" href=\"https://example.com/favicon.ico\"&#62</p><p>&#60!-- 推薦使用的 favicon 檔案格式 --&#62</p><p>&#60link rel=\"icon\" type=\"image/png\" href=\"https://example.com/favicon.png\"&#62</p>",
-        "link": "🛠<a href='https://www.favicon-generator.org'>Favicon 產生器</a><br>🛠<a href='https://realfavicongenerator.net'>真正的 Favicon 產生器 (RealFaviconGenerator)</a><br>📖<a href='https://github.com/audreyr/favicon-cheat-sheet'>Favicon 小抄</a><br>📖<a href='https://css-tricks.com/favicon-quiz/'>Favicons、手機觸控按鈕 、標題標誌...等等。你需要哪一個? - CSS Tricks</a><br>📖<a href='https://caniuse.com/#feat=link-icon-png'>PNG favicons - caniuse</a><br>"
+        "link": "🛠<a target='blank' href='https://www.favicon-generator.org'>Favicon 產生器</a><br>🛠<a target='blank' href='https://realfavicongenerator.net'>真正的 Favicon 產生器 (RealFaviconGenerator)</a><br>📖<a target='blank' href='https://github.com/audreyr/favicon-cheat-sheet'>Favicon 小抄</a><br>📖<a target='blank' href='https://css-tricks.com/favicon-quiz/'>Favicons、手機觸控按鈕 、標題標誌...等等。你需要哪一個? - CSS Tricks</a><br>📖<a target='blank' href='https://caniuse.com/#feat=link-icon-png'>PNG favicons - caniuse</a><br>"
       },
       "i8": {
         "title": "Apple Touch Icon (蘋果手機觸控按鈕)",
         "level": "Low",
         "description": "Apple Touch favicon 已設置 Apple Touch Icon。(200x200px 以上的 apple 按鈕圖檔便能支援大部分你所需螢幕的尺寸)",
         "example": "<p>$#60!-- 蘋果手機觸控按鈕 --$#62</p><p>$#60link rel=\"apple-touch-icon\" href=\"/custom-icon.png\"$#62</p>",
-        "link": "📖<a href='https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html'>搞懂網頁應用程式</a>"
+        "link": "📖<a target='blank' href='https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html'>搞懂網頁應用程式</a>"
       },
       "i9": {
         "title": "Windows Tiles",
         "level": "Low",
         "description": "已設置並連結 Windows Titels。",
         "example": "<p>$#60!-- Microsoft Titles --$#62</p><p>$#60meta name=\"msapplication-config\" content=\"browserconfig.xml\" /$#62</p><p class='text-color-blue'>browserconfig.xml 檔案中 xml 最小設定值如下:</p><p>$#60?xml version=\"1.0\" encoding=\"utf-8\"?$#62</p><p>$#60browserconfig$#62</p><p>$#60msapplication$#62</p><p>$#60tile$#62</p><p>$#60square70x70logo src=\"small.png\"/$#62</p><p>$#60square150x150logo src=\"medium.png\"/$#62</p><p>$#60wide310x150logo src=\"wide.png\"/$#62</p><p>$#60square310x310logo src=\"large.png\"/$#62</p><p>$#60/tile$#62</p><p>$#60/msapplication$#62</p><p>$#60/browserconfig$#62</p>",
-        "link": "📖<a href='https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx'>瀏覽器的配置模式參考</a>"
+        "link": "📖<a target='blank' href='https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx'>瀏覽器的配置模式參考</a>"
       },
       "i10": {
         "title": "Canonical (典範)",
         "level": "Medium",
         "description": "使用rel=\"canonical\"避免重複的內容。",
         "example": "<p>&#60!-- 協助避免重複內容的問題 --&#62</p><p>&#60link rel=\"canonical\" href=\"http://example.com/2017/09/a-new-article-to-red.html\"&#62</p>",
-        "link": "📖<a href='https://support.google.com/webmasters/answer/139066?hl=en'>📖 Use canonical URLs - Search Console Help - Google Support</a><br><a href='https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html'>📖 rel=canonical 常見的五個錯誤 - Google Webmaster Blog</a>"
+        "link": "📖<a target='blank' href='https://support.google.com/webmasters/answer/139066?hl=en'>📖 Use canonical URLs - Search Console Help - Google Support</a><br><a target='blank' href='https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html'>📖 rel=canonical 常見的五個錯誤 - Google Webmaster Blog</a>"
       }
     },
     "t2": {
@@ -87,7 +87,7 @@
         "level": "Medium",
         "description": "文字閱讀方向有被設定在 body 標籤內 (也可以用在其他 HTML 標籤裡)。",
         "example": "<p>&#60html dir=\"rtl\"&#62</p><p(註: right to left 或 left to right 的簡寫)</p>",
-        "link": "📖<a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir'>dir - HTML - MDN</a>"
+        "link": "📖<a target='blank' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir'>dir - HTML - MDN</a>"
       },
       "i3": {
         "title": "Alternate language (備用語言)",
@@ -101,7 +101,7 @@
         "level": "Low",
         "description": "如果有需要，已經為 IE 設定 Conditional comments。",
         "example": "",
-        "link": "📖<a href='https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx'>關於 conditional comments (Internet Explorer) - MSDN - Microsoft</a>"
+        "link": "📖<a target='blank' href='https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx'>關於 conditional comments (Internet Explorer) - MSDN - Microsoft</a>"
       },
       "i5": {
         "title": " RSS feed (RSS 訂閱)",
@@ -115,7 +115,7 @@
         "level": "Medium",
         "description": "CSS critical 將使用在頁面顯示部分的核心 CSS 收集起來，在主要的CSS被呼叫之前就先渲染。它以放置於<style></style>間的形式嵌在檔案中(單行形式、最小化)。",
         "example": "",
-        "link": "🛠<a href='https://github.com/addyosmani/critical'>Critical by Addy Osmani on Github</a>"
+        "link": "🛠<a target='blank' href='https://github.com/addyosmani/critical'>Critical by Addy Osmani on Github</a>"
       },
       "i7": {
         "title": " CSS order (CSS 順序)",
@@ -132,14 +132,14 @@
         "level": "Low",
         "description": "所有 Facebook Open Graph 都有測試過且沒有遺漏掉或出現失敗的訊息。圖檔最小需要 600x315px，推薦大小 1200x630px。",
         "example": "<p class='text-color-blue'>補充: 利用 og:image:width 及 og:image:height 的方式指定圖片尺寸，者可以協助爬蟲直接渲染圖片，不需要再異步載入並處理它。</p><p>&#60meta property=\"og:type\" content=\"website\"&#62</p><p>&#60meta property=\"og:url\" content=\"https://example.com/page.html\"&#62</p><p>&#60meta property=\"og:title\" content=\"Content Title\"&#62</p><p>&#60meta property=\"og:image\" content=\"https://example.com/image.jpg\"&#62</p><p>&#60meta property=\"og:description\" content=\"Description Here\"&#62</p><p>&#60meta property=\"og:site_name\" content=\"Site Name\"&#62</p><p>&#60meta property=\"og:locale\" content=\"en_US\"&#62</p><p>&#60!-- Next tags are optional but recommended --&#62</p><p>&#60meta property=\"og:image:width\" content=\"1200\"&#62</p><p>&#60meta property=\"og:image:height\" content=\"630\"&#62</p>",
-        "link": "📖<a href='https://developers.facebook.com/docs/sharing/webmasters/'>網頁大師的分享指南</a><br>📖<a href='https://developers.facebook.com/docs/sharing/best-practices/'>Best Practices - Sharing</a><br>🛠<a href='https://developers.facebook.com/tools/debug/'>利用Facebook OG testing測試你的網頁</a>"
+        "link": "📖<a target='blank' href='https://developers.facebook.com/docs/sharing/webmasters/'>網頁大師的分享指南</a><br>📖<a target='blank' href='https://developers.facebook.com/docs/sharing/best-practices/'>Best Practices - Sharing</a><br>🛠<a target='blank' href='https://developers.facebook.com/tools/debug/'>利用Facebook OG testing測試你的網頁</a>"
       },
       "i2": {
         "title": "Twitter Card",
         "level": "Low",
         "description": "所有 Twitter Card 都有測試過且沒有遺漏掉或出現失敗的訊息。",
         "example": "<p>&#60meta name=\"twitter:card\" content=\"summary\"&#62</p><p>&#60meta name=\"twitter:site\" content=\"@site_account\"&#62</p><p>&#60meta name=\"twitter:creator\" content=\"@individual_account\"&#62</p><p>&#60meta name=\"twitter:url\" content=\"https://example.com/page.html\"&#62</p><p>&#60meta name=\"twitter:title\" content=\"Content Title\"&#62</p><p>&#60meta name=\"twitter:description\" content=\"Content description less than 200 characters\"&#62</p><p>&#60meta name=\"twitter:image\" content=\"https://example.com/image.jpg\"&#62</p>",
-        "link": "📖<a href='https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started'> Twitter card 入門 — Twitter Developers</a><br>🛠<a href='https://cards-dev.twitter.com/validator'>利用Twitter card validator測試你的網頁</a>"
+        "link": "📖<a target='blank' href='https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started'> Twitter card 入門 — Twitter Developers</a><br>🛠<a target='blank' href='https://cards-dev.twitter.com/validator'>利用Twitter card validator測試你的網頁</a>"
       }
     }
   },
@@ -151,7 +151,7 @@
         "level": "High",
         "description": "HTML5 Semantic Elements 被適當使用(header, section, footer, main...)。",
         "example": "",
-        "link": "📖<a href='http://htmlreference.io/'>HTML 參考</a>"
+        "link": "📖<a target='blank' href='http://htmlreference.io/'>HTML 參考</a>"
       },
       "i2": {
         "title": "Error pages (錯誤頁面)",
@@ -165,7 +165,7 @@
         "level": "Medium",
         "description": "注意，當你有外部連結且使用target=\"_blank\"時，在連結加上rel=\"noopener\"，可以避免 tab nabbing(開啟新 tab 時造成原頁面效能低落)。若你要支援舊版 Firefox，使用rel=\"noopener noreferrer\"。",
         "example": "",
-        "link": "📖<a href='https://mathiasbynens.github.io/rel-noopener/'>關於 rel=noopener</a>"
+        "link": "📖<a target='blank' href='https://mathiasbynens.github.io/rel-noopener/'>關於 rel=noopener</a>"
       },
       "i4": {
         "title": "Clean up comments (清除備註)",
@@ -182,21 +182,21 @@
         "level": "High",
         "description": "所有頁面都要經過 W3C 檢測器的測試，確保沒有 HTML 程式碼的問題。",
         "example": "",
-        "link": "🛠<a href='https://validator.w3.org/'>W3C 檢測器</a>"
+        "link": "🛠<a target='blank' href='https://validator.w3.org/'>W3C 檢測器</a>"
       },
       "i2": {
         "title": "HTML Lint",
         "level": "High",
         "description": "我使用工具分析自己的 HTML 程式碼，幫助我發現任何可能的問題。",
         "example": "",
-        "link": "🛠<a href='https://www.10bestdesign.com/dirtymarkup/'>髒亂程式碼修飾器</a>"
+        "link": "🛠<a target='blank' href='https://www.10bestdesign.com/dirtymarkup/'>髒亂程式碼修飾器</a>"
       },
       "i3": {
         "title": "Link checker (連結確認器)",
         "level": "High",
         "description": "使用 Link checker 確保沒有任何無效連結，避免出現任何 404 error。",
         "example": "",
-        "link": "🛠<a href='https://validator.w3.org/checklink'>W3C 連結確認器</a>"
+        "link": "🛠<a target='blank' href='https://validator.w3.org/checklink'>W3C 連結確認器</a>"
       },
       "i4": {
         "title": "Adblockers test (廣告阻斷程式測試)",
@@ -215,7 +215,7 @@
         "level": "High",
         "description": "所有瀏覽器都支援 WOFF、WOFF2 跟 TTF 字體。",
         "example": "<p calss='text-color-blue'>補充: 使用 webfonts 可能會導致 Flash Of Unstyled Text / Flash Of Invisible Text - 考慮使用後備字體和/或利用 webfont 加載器來控制行為。</p>",
-        "link": "📖<a href='https://caniuse.com/#feat=woff'>WOFF - 網頁開放字體格式 - Caniuse.</a><br>📖<a href='https://caniuse.com/#feat=woff2'>WOFF 2.0 - 網頁開放字體格式 - Caniuse.</a><br>📖<a href='https://caniuse.com/#feat=ttf'>TTF/OTF - TrueType 字體及 OpenTyps 字體的支援狀況</a><br>📖<a href='https://css-tricks.com/snippets/css/using-font-face/'>Using @font-face - CSS-Tricks</a>"
+        "link": "📖<a target='blank' href='https://caniuse.com/#feat=woff'>WOFF - 網頁開放字體格式 - Caniuse.</a><br>📖<a target='blank' href='https://caniuse.com/#feat=woff2'>WOFF 2.0 - 網頁開放字體格式 - Caniuse.</a><br>📖<a target='blank' href='https://caniuse.com/#feat=ttf'>TTF/OTF - TrueType 字體及 OpenTyps 字體的支援狀況</a><br>📖<a target='blank' href='https://css-tricks.com/snippets/css/using-font-face/'>Using @font-face - CSS-Tricks</a>"
       },
       "i2": {
         "title": "Webfont size (網頁字體大小)",
@@ -229,7 +229,7 @@
         "level": "Low",
         "description": "利用 webfont loader 控制載入的行為。",
         "example": "",
-        "link": "🛠<a href='https://github.com/typekit/webfontloader'>Typekit Web Font Loader</a>"
+        "link": "🛠<a target='blank' href='https://github.com/typekit/webfontloader'>Typekit Web Font Loader</a>"
       }
     }
   },
@@ -255,7 +255,7 @@
         "level": "Medium",
         "description": "你的頁面有使用 CSS 預處理器",
         "example": "",
-        "link": "推薦 <a href='http://sass-lang.com/'>Sass</a>"
+        "link": "推薦 <a target='blank' href='http://sass-lang.com/'>Sass</a>"
       },
       "i4": {
         "title": "Unique ID (ID 獨特性)",
@@ -269,7 +269,7 @@
         "level": "High",
         "description": "確保 CSS reset (reset, normalize or reboot)被使用*(如果你使用 CSS 框架，例如 Bootstrap 或 Foundation，Normalize 已經包含在裡面)*。",
         "example": "",
-        "link": "📖<a href='https://meyerweb.com/eric/tools/css/reset/'>Reset.css</a><br>📖<a href='https://necolas.github.io/normalize.css/'>Normalize.css</a><br>📖<a href='https://getbootstrap.com/docs/4.0/content/reboot/'>Reboot</a>"
+        "link": "📖<a target='blank' href='https://meyerweb.com/eric/tools/css/reset/'>Reset.css</a><br>📖<a target='blank' href='https://necolas.github.io/normalize.css/'>Normalize.css</a><br>📖<a target='blank' href='https://getbootstrap.com/docs/4.0/content/reboot/'>Reboot</a>"
       },
       "i6": {
         "title": "JS prefix (JS 前置語言)",
@@ -290,7 +290,7 @@
         "level": "High",
         "description": "已經使用了 CSS 的 vendor prefixes，且依照瀏覽器支援狀況自動生成相對應的 CSS 前置語言。",
         "example": "",
-        "link": "🛠<a href='https://autoprefixer.github.io/'>線上 CSS 自動前置語言生成器</a>"
+        "link": "🛠<a target='blank' href='https://autoprefixer.github.io/'>線上 CSS 自動前置語言生成器</a>"
       }
     },
     "t2": {
@@ -314,14 +314,14 @@
         "level": "Medium",
         "description": "CSS 檔案需要 non-blocking，避免還在抓取 DOM 時就載入。",
         "example": "",
-        "link": "📖<a href='https://github.com/filamentgroup/loadCSS'>透過 filament group 進行 loadCSS</a><br>📖<a href='https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf'>使用 loadCSS 預載入 CSS 的例子</a>"
+        "link": "📖<a target='blank' href='https://github.com/filamentgroup/loadCSS'>透過 filament group 進行 loadCSS</a><br>📖<a target='blank' href='https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf'>使用 loadCSS 預載入 CSS 的例子</a>"
       },
       "i4": {
         "title": "Unused CSS (無用的 CSS)",
         "level": "Low",
         "description": "移除沒用到的 CSS。",
         "example": "",
-        "link": "🛠<a href='https://uncss-online.com/'>UnCSS Online</a><br>🛠<a href='https://github.com/purifycss/purifycss'>PurifyCSS</a><br>🛠<a href='https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage'>Chrome 開發者工具 Coverage</a>"
+        "link": "🛠<a target='blank' href='https://uncss-online.com/'>UnCSS Online</a><br>🛠<a target='blank' href='https://github.com/purifycss/purifycss'>PurifyCSS</a><br>🛠<a target='blank' href='https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage'>Chrome 開發者工具 Coverage</a>"
       }
     },
     "t3": {
@@ -331,7 +331,7 @@
         "level": "High",
         "description": "檢測所有 CSS、SCSS 檔案都沒有錯誤。",
         "example": "",
-        "link": "🛠<a href='https://stylelint.io/'>stylelint a CSS linter</a><br>📖<a href='https://sass-guidelin.es/'>Sass 指南</a>"
+        "link": "🛠<a target='blank' href='https://stylelint.io/'>stylelint a CSS linter</a><br>📖<a target='blank' href='https://sass-guidelin.es/'>Sass 指南</a>"
       },
       "i2": {
         "title": "Responsive web design (響應式網頁設計)",
@@ -345,7 +345,7 @@
         "level": "Medium",
         "description": "測試 CSS 並且修正相關錯誤。",
         "example": "",
-        "link": "🛠<a href='https://jigsaw.w3.org/css-validator/'>CSS 檢測器</a>"
+        "link": "🛠<a target='blank' href='https://jigsaw.w3.org/css-validator/'>CSS 檢測器</a>"
       },
       "i4": {
         "title": "Desktop Browsers (桌上瀏覽器)",
@@ -373,14 +373,14 @@
         "level": "High",
         "description": "確保頁面的像素最佳化。這取決於你的作品品質，你不需要 100% 準確，但應該盡可能接近當初的設計",
         "example": "",
-        "link": "🛠<a href='https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en'>完美像素 - Chrome 擴充軟件</a>"
+        "link": "🛠<a target='blank' href='https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en'>完美像素 - Chrome 擴充軟件</a>"
       },
       "i8": {
         "title": "Reading direction (閱讀方向)",
         "level": "High",
         "description": "如果有其他語系會被使用到的話，針對所有頁面都使用 LTR 跟 RTL 閱讀方向測試過。",
         "example": "",
-        "link": "📖<a href='https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/'>Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks</a><br>📖<a href='https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/'>Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks</a>"
+        "link": "📖<a target='blank' href='https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/'>Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks</a><br>📖<a target='blank' href='https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/'>Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks</a>"
       }
     }
   },
@@ -391,15 +391,15 @@
         "title": "Optimization (優化)",
         "level": "High",
         "description": "所有圖片都優化過且在瀏覽器中正常渲染。重要的頁面可以使用網頁字體格式(像是首頁)。",
-        "example": "<p>補充: 點擊Addy Osmani 的免費電子書**<a href='https://images.guide'>Essential Image Optimization</a>**，完整理解圖片(image)的優化</p>",
-        "link": "🛠<a href=''>Imagemin</a><br>🛠<a href=''>使用 ImageOptim免費優化你的圖片</a>"
+        "example": "<p>補充: 點擊Addy Osmani 的免費電子書**<a target='blank' href='https://images.guide'>Essential Image Optimization</a>**，完整理解圖片(image)的優化</p>",
+        "link": "🛠<a target='blank' href=''>Imagemin</a><br>🛠<a target='blank' href=''>使用 ImageOptim免費優化你的圖片</a>"
       },
       "i2": {
         "title": "Picture/Srcset",
         "level": "Medium",
         "description": "已經使用 picture/srcset 來提供最適合使用者當前 viewport 的圖片。",
         "example": "",
-        "link": "📖<a href='https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/'>如何使用 srcset 打造響應式圖片</a>"
+        "link": "📖<a target='blank' href='https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/'>如何使用 srcset 打造響應式圖片</a>"
       },
       "i3": {
         "title": "Retina (視網膜螢幕)",
@@ -427,7 +427,7 @@
         "level": "High",
         "description": "所有<img>都有一個 Alternative text，用文字敘述圖片的內容。(註:在無障礙網頁中尤其重要)",
         "example": "",
-        "link": "📖<a href='https://axesslab.com/alt-texts/'>Alt-texts: The Ultimate Guide</a>"
+        "link": "📖<a target='blank' href='https://axesslab.com/alt-texts/'>Alt-texts: The Ultimate Guide</a>"
       },
       "i7": {
         "title": " Lazy loading (懶加載)",
@@ -460,28 +460,28 @@
         "level": "High",
         "description": "JavaScript 檔案已經壓縮(可以在檔名最後加上.min)。",
         "example": "",
-        "link": "📖<a href='https://developers.google.com/speed/docs/insights/MinifyResources'>壓縮的資源 (HTML、CSS 跟 JavaScript)</a>"
+        "link": "📖<a target='blank' href='https://developers.google.com/speed/docs/insights/MinifyResources'>壓縮的資源 (HTML、CSS 跟 JavaScript)</a>"
       },
       "i4": {
         "title": "JavaScript security (JS 安全性)",
         "level": "High",
         "description": "利用 JavaScript 開發安全應用程式的指南(連結於詳細下方)",
         "example": "",
-        "link": "📖<a href='https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript'>安全應用程式的指南</a>"
+        "link": "📖<a target='blank' href='https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript'>安全應用程式的指南</a>"
       },
       "i5": {
         "title": "Non-blocking (不阻塞)",
         "level": "Medium",
         "description": "JavaScript 檔案使用異步加載時，在標籤屬性加上async，若是延後加載則使用defer。",
         "example": "",
-        "link": "📖<a href='https://developers.google.com/speed/docs/insights/BlockingJS'>移除干擾渲染的 JavaScript</a>"
+        "link": "📖<a target='blank' href='https://developers.google.com/speed/docs/insights/BlockingJS'>移除干擾渲染的 JavaScript</a>"
       },
       "i6": {
         "title": "Modernizr",
         "level": "Low",
         "description": "如果你需要指定特定的功能，可以使用客製化過的 Modernizr 來增加 class 到你的<html>。",
         "example": "",
-        "link": "🛠<a href='https://modernizr.com/download?setclasses'>客製化你的 Modernizr</a>"
+        "link": "🛠<a target='blank' href='https://modernizr.com/download?setclasses'>客製化你的 Modernizr</a>"
       }
     },
     "t2": {
@@ -491,7 +491,7 @@
         "level": "High",
         "description": "檢驗 JavaScript 中被忽略的錯誤(基本上檢查結構跟基礎規則)",
         "example": "",
-        "link": "📖<a href='https://eslint.org/'>ESLint - 針對 JavaScript 跟 JSXThe 的實用套件程式</a>"
+        "link": "📖<a target='blank' href='https://eslint.org/'>ESLint - 針對 JavaScript 跟 JSXThe 的實用套件程式</a>"
       }
     }
   },
@@ -502,7 +502,7 @@
         "title": "檢視你的網站",
         "level": "High",
         "description": "使用網頁的安全性自動分析器檢視自己的網站。",
-        "example": "🛠<a href='https://securityheaders.io/'>securityheaders.io</a><br><a href='https://observatory.mozilla.org/'>Observatory by Mozilla</a><br><a href='https://asafaweb.com/'>ASafaWeb - ASP.NET 網頁的安全性自動分析器</a>",
+        "example": "🛠<a target='blank' href='https://securityheaders.io/'>securityheaders.io</a><br><a target='blank' href='https://observatory.mozilla.org/'>Observatory by Mozilla</a><br><a target='blank' href='https://asafaweb.com/'>ASafaWeb - ASP.NET 網頁的安全性自動分析器</a>",
         "link": ""
       }
     },
@@ -513,42 +513,42 @@
         "level": "Medium",
         "description": "HTTPS 使用在所有頁面跟所有外部的內容(插件、圖片...等)。",
         "example": "",
-        "link": "🛠<a href='https://letsencrypt.org/'>來加密吧 - SSL/TLS 的免費證書</a><br>🛠<a href='https://www.ssllabs.com/ssltest/index.html'>免費的 SSL 服務測試</a><br>📖<a href='https://caniuse.com/#feat=stricttransportsecurity'>嚴格的傳輸安全</a>"
+        "link": "🛠<a target='blank' href='https://letsencrypt.org/'>來加密吧 - SSL/TLS 的免費證書</a><br>🛠<a target='blank' href='https://www.ssllabs.com/ssltest/index.html'>免費的 SSL 服務測試</a><br>📖<a target='blank' href='https://caniuse.com/#feat=stricttransportsecurity'>嚴格的傳輸安全</a>"
       },
       "i2": {
         "title": "HTTP Strict Transport Security (HSTS) (嚴格的傳輸安全)",
         "level": "Medium",
         "description": "在 HTTP header 設置'Strict-Transport-Security'。",
         "example": "",
-        "link": "🛠<a href='https://hstspreload.org/'>檢查 HSTS 的預載入狀況與權限</a><br>📖<a href='https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet'>HTTP Strict Transport Security 小抄 - OWASP</a><br>📖<a href='https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet'>保護傳輸面的小抄 - OWASP</a>"
+        "link": "🛠<a target='blank' href='https://hstspreload.org/'>檢查 HSTS 的預載入狀況與權限</a><br>📖<a target='blank' href='https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet'>HTTP Strict Transport Security 小抄 - OWASP</a><br>📖<a target='blank' href='https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet'>保護傳輸面的小抄 - OWASP</a>"
       },
       "i3": {
         "title": "Cross Site Request Forgery (CSRF) (跨網站假請求攻擊)",
         "level": "High",
         "description": "確認發送到服務端的請求會是合法且確實來自你的網站/app，避免 CSRF 攻擊。",
         "example": "",
-        "link": "📖<a href='https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet'>Cross-Site Request Forgery (CSRF) 對抗小抄 - OWASP</a>"
+        "link": "📖<a target='blank' href='https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet'>Cross-Site Request Forgery (CSRF) 對抗小抄 - OWASP</a>"
       },
       "i4": {
         "title": "Cross Site Scripting (XSS) (跨網站指令碼)",
         "level": "High",
         "description": "確認網站或頁面不會發生 XSS 的情況。",
         "example": "",
-        "link": "📖<a href=''>XSS (Cross Site Scripting) 對抗小抄 - OWASP</a><br>📖<a href=''>XSS 基於 DOM 的對抗小抄 - OWASP</a>"
+        "link": "📖<a target='blank' href=''>XSS (Cross Site Scripting) 對抗小抄 - OWASP</a><br>📖<a target='blank' href=''>XSS 基於 DOM 的對抗小抄 - OWASP</a>"
       },
       "i5": {
         "title": "Content Type Options",
         "level": "Medium",
         "description": "避免 Google Chrome 及 Internet Explorer 嘗試從服務器聲明的內容類型中察覺響應式內容類型。",
         "example": "",
-        "link": "📖<a href='https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options'>X-Content-Type-Options - Scott Helme</a>"
+        "link": "📖<a target='blank' href='https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options'>X-Content-Type-Options - Scott Helme</a>"
       },
       "i6": {
         "title": "X-Frame-Options (XFO) (外部框架連結設定)",
         "level": "Medium",
         "description": "保護你的使用者免於劫持攻擊。",
         "example": "",
-        "link": "📖<a href='https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options'>X-Frame-Options - Scott Helme</a><br>📖<a href='https://tools.ietf.org/html/rfc7034'>RFC7034 - HTTP Header Field X-Frame-Options</a>"
+        "link": "📖<a target='blank' href='https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options'>X-Frame-Options - Scott Helme</a><br>📖<a target='blank' href='https://tools.ietf.org/html/rfc7034'>RFC7034 - HTTP Header Field X-Frame-Options</a>"
       }
     }
   },
@@ -560,14 +560,14 @@
         "level": "High",
         "description": "每一個檔案的大小都介於 0 ~ 500KB。",
         "example": "",
-        "link": "🛠<a href='https://tools.pingdom.com/'>網站頁面分析</a><br>📖<a href='https://evilmartians.com/chronicles/size-limit-make-the-web-lighter'>大小限制器: 讓網站更輕點</a>"
+        "link": "🛠<a target='blank' href='https://tools.pingdom.com/'>網站頁面分析</a><br>📖<a target='blank' href='https://evilmartians.com/chronicles/size-limit-make-the-web-lighter'>大小限制器: 讓網站更輕點</a>"
       },
       "i2": {
         "title": "Minified (最小化)",
         "level": "Medium",
         "description": "HTML 有進行壓縮。",
         "example": "",
-        "link": "🛠<a href='https://validator.w3.org/'>W3C 檢測器</a>"
+        "link": "🛠<a target='blank' href='https://validator.w3.org/'>W3C 檢測器</a>"
       },
       "i3": {
         "title": "Lazy loading (懶加載)",
@@ -581,18 +581,18 @@
         "level": "Medium",
         "description": "如果你有使用 cookie，確保 cookie 大小不要超過 4096 bytes，且在你的網域內別超過20個。",
         "example": "",
-        "link": "📖<a href='https://tools.ietf.org/html/rfc6265'>Cookie 規格: RFC 6265</a><br>📖<a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies'>Cookies</a><br>🛠<a href='http://browsercookielimits.squawky.net/'>瀏覽器 Cookie 限制</a>"
+        "link": "📖<a target='blank' href='https://tools.ietf.org/html/rfc6265'>Cookie 規格: RFC 6265</a><br>📖<a target='blank' href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies'>Cookies</a><br>🛠<a target='blank' href='http://browsercookielimits.squawky.net/'>瀏覽器 Cookie 限制</a>"
       },
       "i5": {
         "title": "Third party components (第三方組件)",
         "level": "Medium",
         "description": "可能的話，以靜態的組件取代第三方 iframe 或依賴外部 JS 的組件(如共享按鈕)，進而限制呼叫外部 APIs 的次數並保護使用者的行動隱私。",
         "example": "",
-        "link": "🛠<a href='https://simplesharingbuttons.com/'>簡單的分享按鈕產生器</a>"
+        "link": "🛠<a target='blank' href='https://simplesharingbuttons.com/'>簡單的分享按鈕產生器</a>"
       }
     },
     "t2": {
-      "title": "準備迎接接下來的請求 📖<a href='https://css-tricks.com/prefetching-preloading-prebrowsing/'>下方技術的解釋</a>",
+      "title": "準備迎接接下來的請求 📖<a target='blank' href='https://css-tricks.com/prefetching-preloading-prebrowsing/'>下方技術的解釋</a>",
       "i1": {
         "title": "DNS resolution (DNS 解析)",
         "level": "Low",
@@ -619,7 +619,7 @@
         "level": "Low",
         "description": "使用 preload 提前載入當前頁面需要的資源(例如 <body> 最後面的 script 區域)。",
         "example": "&#60link rel=\"preload\" href=\"app.js\"&#62",
-        "link": "📖<a href='https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf'>prefetch 與 preload 的不同點</a>"
+        "link": "📖<a target='blank' href='https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf'>prefetch 與 preload 的不同點</a>"
       }
     },
     "t3": {
@@ -629,7 +629,7 @@
         "level": "High",
         "description": "測試過所有的網頁(不只首頁)且分數都至少90分(滿分100)。",
         "example": "",
-        "link": "🛠<a href='https://developers.google.com/speed/pagespeed/insights/'>Google 頁面速度檢測</a><br>🛠<a href='https://testmysite.thinkwithgoogle.com/intl/en-us'>利用 Google 測驗頁面在手機上的速度</a><br>🛠<a href='https://www.webpagetest.org/'>WebPagetest - 網站的優化與效能測試</a>"
+        "link": "🛠<a target='blank' href='https://developers.google.com/speed/pagespeed/insights/'>Google 頁面速度檢測</a><br>🛠<a target='blank' href='https://testmysite.thinkwithgoogle.com/intl/en-us'>利用 Google 測驗頁面在手機上的速度</a><br>🛠<a target='blank' href='https://www.webpagetest.org/'>WebPagetest - 網站的優化與效能測試</a>"
       }
     }
   },
@@ -640,15 +640,15 @@
         "title": "Progressive enhancement (逐步增強)",
         "level": "Medium",
         "description": "網站的重要功能，像是主要的指引或搜尋區塊需要在沒有 JavaScript 的情況下也能運作。",
-        "example": "<p>補充: 你可以看這份清單📹<a href='https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g'>A11ycasts with Rob Dodson</a></p>",
-        "link": "📹<a href='https://www.youtube.com/watch?v=kBmvq2cE0D8'>Chrome 開發者工具的 Enable / Disable JavaScript</a>"
+        "example": "<p>補充: 你可以看這份清單📹<a target='blank' href='https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g'>A11ycasts with Rob Dodson</a></p>",
+        "link": "📹<a target='blank' href='https://www.youtube.com/watch?v=kBmvq2cE0D8'>Chrome 開發者工具的 Enable / Disable JavaScript</a>"
       },
       "i2": {
         "title": "Color contrast (顏色對比)",
         "level": "Medium",
         "description": "顏色對比度最少要通過 WCAG 的　AA 級(手機要達到 AAA)。",
         "example": "",
-        "link": "🛠<a href='https://leaverou.github.io/contrast-ratio/'>對比值</a>"
+        "link": "🛠<a target='blank' href='https://leaverou.github.io/contrast-ratio/'>對比值</a>"
       }
     },
     "t2": {
@@ -665,7 +665,7 @@
         "level": "High",
         "description": "標題標籤要按照等級妥善的使用(H1 to H6)。",
         "example": "",
-        "link": "📹<a href='https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g'>為何標題跟地標如此重要 -- A11ycasts #18</a>"
+        "link": "📹<a target='blank' href='https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g'>為何標題跟地標如此重要 -- A11ycasts #18</a>"
       }
     },
     "t3": {
@@ -689,7 +689,7 @@
         "level": "High",
         "description": "<main> has role=\"main\".",
         "example": "",
-        "link": "📖<a href='https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page'>使用 ARIA landmarks 劃分頁面的區塊</a>"
+        "link": "📖<a target='blank' href='https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page'>使用 ARIA landmarks 劃分頁面的區塊</a>"
       }
     },
     "t4": {
@@ -699,7 +699,7 @@
         "level": "Medium",
         "description": "這在手機上顯示不同類型的客製化鍵盤或配件時特別重要。",
         "example": "",
-        "link": "📖<a href='http://mobileinputtypes.com/'>手機 input 標籤類型</a>"
+        "link": "📖<a target='blank' href='http://mobileinputtypes.com/'>手機 input 標籤類型</a>"
       }
     },
     "t5": {
@@ -709,7 +709,7 @@
         "level": "High",
         "description": "Lable 各自會與相對的元素產生關聯。如果希望 label 不能被隱藏起來，使用aria-label來代替。",
         "example": "",
-        "link": "📖<a href='https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute'>使用 aria-label 屬性 - MDN</a>"
+        "link": "📖<a target='blank' href='https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute'>使用 aria-label 屬性 - MDN</a>"
       }
     },
     "t6": {
@@ -719,7 +719,7 @@
         "level": "High",
         "description": "利用 Wave 測試你的頁面達到親和力標準。",
         "example": "",
-        "link": "🛠<a href='http://wave.webaim.org/'>Wave 測試</a>"
+        "link": "🛠<a target='blank' href='http://wave.webaim.org/'>Wave 測試</a>"
       },
       "i2": {
         "title": "Keyboard navigation (鍵盤導覽)",
@@ -740,7 +740,7 @@
         "level": "High",
         "description": "如果 focus 無法使用，它會被 CSS 中的視覺部分取代。",
         "example": "",
-        "link": "📹<a href='https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g'>管理 Focus - A11ycasts #22</a>"
+        "link": "📹<a target='blank' href='https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g'>管理 Focus - A11ycasts #22</a>"
       }
     }
   },
@@ -773,21 +773,21 @@
         "level": "High",
         "description": "Robots.txt 不會破壞網頁。",
         "example": "",
-        "link": "🛠利用 <a href='https://www.google.com/webmasters/tools/robots-testing-tool'>Google Robots</a> 測試工具測試你的robots.txt。"
+        "link": "🛠利用 <a target='blank' href='https://www.google.com/webmasters/tools/robots-testing-tool'>Google Robots</a> 測試工具測試你的robots.txt。"
       },
       "i5": {
         "title": "Structured Data (結構化資料)",
         "level": "High",
         "description": "確認所有頁面使用了 Structured Data 且已經測試過沒有出現錯誤。Structured Data 會協助爬蟲理解這個頁面的內容。",
         "example": "",
-        "link": "📖<a href='https://developers.google.com/search/docs/guides/intro-structured-data'>介紹 Structured Data - Search - Google Developers</a><br>🛠 利用 <a href='https://search.google.com/structured-data/testing-tool'>Structured Data Testing Tool</a> 測試你的網頁<br>🛠 Complete list of vocabularies that can be used as structured data. <a href='http://schema.org/docs/full.html'>Schema.org Full Heirarchy</a>"
+        "link": "📖<a target='blank' href='https://developers.google.com/search/docs/guides/intro-structured-data'>介紹 Structured Data - Search - Google Developers</a><br>🛠 利用 <a target='blank' href='https://search.google.com/structured-data/testing-tool'>Structured Data Testing Tool</a> 測試你的網頁<br>🛠 Complete list of vocabularies that can be used as structured data. <a target='blank' href='http://schema.org/docs/full.html'>Schema.org Full Heirarchy</a>"
       },
       "i6": {
         "title": "Sitemap HTML (HTML 網站地圖)",
         "level": "Medium",
         "description": "已經設置 HTML sitemap 且透過網站 footer 中的連結可以使用。",
         "example": "",
-        "link": "📖<a href='https://support.google.com/webmasters/answer/183668?hl=en'>Sitemap 指南 - Google Support</a><br>🛠<a href='https://websiteseochecker.com/html-sitemap-generator/'>Sitemap 檢測器</a>"
+        "link": "📖<a target='blank' href='https://support.google.com/webmasters/answer/183668?hl=en'>Sitemap 指南 - Google Support</a><br>🛠<a target='blank' href='https://websiteseochecker.com/html-sitemap-generator/'>Sitemap 檢測器</a>"
       }
     }
   }

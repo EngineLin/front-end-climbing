@@ -1,0 +1,209 @@
+<template>
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <h2>功能教學小教室</h2>
+      </div>
+
+      <div class="row">
+        <h3>建立帳號</h3>
+        <div class="row row-content">
+          <p>
+            點選右上方的 Log-In 標籤或者未登入的使用者頭像，便可以登入或建立帳號。<br><br>
+            建立帳號便可以使用專案清單的儲存功能，也能夠同時建立複數的專案。
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-account.png" alt="Manual account">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>使用開發者清單</h3>
+        <div class="row row-content">
+          <p>
+            左上方依序有完成勾選選單，紅色英文代表該選項的重要程度。<br><br>
+            點選下方藍色箭頭(有資料才會是藍色)可以開啟項目的詳細資料: <sapn class="text-danger">筆記、範例與連結</sapn>。<br><br>
+            其中連結依照類型區分成三類，會以圖示標住在連結前方，分別是:<br><br>
+            📖: 文檔或文章<br><br>
+            🛠: 網路工具 / 測試工具<br><br>
+            📹: 媒體或影片內容
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-checkItem.png" alt="Manual check item">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>項目的刪除</h3>
+        <div class="row row-content">
+          <p>
+            專案、個別項目與筆記都可以刪除。<br><br>
+            為了避免您誤刪，需要<sapn class="text-danger">雙擊滑鼠左鍵</sapn>才會刪除資料。
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-deleteBtn.png" alt="Manual delete button">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>資料保存</h3>
+        <div class="row row-content">
+          <p>
+            系統本身每 60 秒會為您儲存一次檔案(如果您是登入狀態)，<br><br>
+            進行新增與刪除專案時會立即儲存檔案，<br><br>
+            當點選右下方的 SAVE 按鈕也會立即儲存檔案。<br><br>
+            除此之外，所有的操作都在電腦本地端，<sapn class="text-danger">沒有按儲存的話是不會保留下來的喔!</sapn>
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-save.png" alt="Manual save button">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>項目拖曳</h3>
+        <div class="row row-content">
+          <p>
+            當您按住滑鼠左鍵點選項目右方的綠色拉霸，並且<sapn class="text-danger">上下拖曳</sapn>，就能改變項目的順序。<br><br>
+            同時左方的導覽列也會同步更新。
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-draggable.png" alt="Manual draggable bar">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>快速導覽</h3>
+        <div class="row row-content">
+          <p>
+            當您需要快速尋找項目時，使用左方的導覽列表，<br><br>
+            點選左方導覽列表後，會自動幫您找到對應項目的位置。
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-navigator.png" alt="Manual navigator">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>新增專案</h3>
+        <div class="row row-content">
+          <p>
+            點選左上方的 +New Project 按鈕可以為您新增一個專案，<br><br>
+            專案名稱直接在清單的最上方修改。<br><br>
+            新增的專案會顯示在左上方，<sapn class="text-danger">點選即可以切換</sapn>。
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-newProject.png" alt="Manual new project">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>增加筆記</h3>
+        <div class="row row-content">
+          <p>
+            點選項目中央下方的雙箭頭，可以開啟新增筆記功能。<br><br>
+            紀錄對於該項目的細節吧!
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/manual-newNote.png" alt="Manual new note">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <h3>勳章</h3>
+        <div class="row row-content">
+          <p>
+            ...努力施工中...<br><br>
+            當您完成專案中所有項目後，會得到一個 front-end checklist 的獎勵勳章，<br><br>
+            您可以放在 .md 或 markdown 寫成的文件中，表示您遵照高標準完成您的網站。
+          </p>
+          <div class='imgBox'>
+            <img src="./../images/coding.png" alt="Coding">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+</script>
+
+<style scoped>
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .imgBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .row-content {
+    flex-direction: row !important;
+  }
+
+  h2 {
+    line-height: 128px;
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 24px;
+    padding: 0;
+    margin-bottom: 5%;
+    text-decoration: underline;
+  }
+
+  img {
+    width: 70%;
+    margin: 0;
+  }
+
+  p {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-weight: bold;
+  }
+</style>
+

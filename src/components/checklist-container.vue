@@ -1,17 +1,14 @@
 <template>
   <div>
     <div class="row">
-      <input class="project-name bg-primary" maxlength="30" :value="projectName" @keyup="updateProjectName"></input>
+      <input class="project-name bg-primary" maxlength="30" v-model="projectName"></input>
       <!-- 搜尋覽 -->
       <!-- <input type="text" class="search-bar js-search-bar" v-model="userSeach" placeholder="項目查詢"> -->
     </div>
     <draggable class="checklist-body" v-model='myList' 
                :options="{ el:'.checklist-body',
                            animation: 150,
-                           handle: '.js-drag-bar',
-                           scroll: true,
-                           scrollSensitivity: 60,
-                           scrollSpeed: 15 }">
+                           handle: '.js-drag-bar'}">
 
       <!-- // 利用 v-for 遍歷accountData中指定的專案代碼 -->
       <checklist-card-component class="checklist-item" v-for="(item, index) in listData" 
@@ -31,17 +28,11 @@
       'checklist-card-component': checklistCard,
       draggable,
     },
-    data: function() {
-      return {
-        userSeach: '',
-      }
-    },
-    methods: {
-      updateProjectName: function() {
-        let value = $('.project-name').val();
-        this.$store.commit('updateProjectName', value)
-      }
-    },
+    // data: function() {
+    //   return {
+    //     userSeach: '',
+    //   }
+    // },
     computed: {
       ...mapGetters([
         'accountData',
@@ -49,16 +40,18 @@
         'projectNum'
       ]),
       projectName: {
-        get: function() {
-          console.log('checklist projectNum changed')
-          return this.accountData.projectData[this.projectNum].projectName;
+        get() {
+          // console.log('checklist projectNum changed')
+          let number = this.projectNum
+          return this.accountData.projectData[this.projectNum].projectName
         },
-        set: function(){
+        set(value) {
+          this.$store.commit('updateProjectName', value)
         }
       },
       myList: {
         get() {
-          return this.accountData.projectData[this.projectNum].listData;
+          return this.accountData.projectData[this.projectNum].listData
         },
         set(value) {
           this.$store.commit('changeSortable', value)
@@ -76,8 +69,6 @@
     font-size: 40px;
     margin: 30px auto 10px;
     text-align: center;
-    /* box-shadow: inset 2px 0 5px black; */
-    /* border: solid 1px gray; */
   }
 
   .search-bar {

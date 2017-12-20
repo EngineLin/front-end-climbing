@@ -28,21 +28,22 @@ export default new Vuex.Store({
 
   getters: {
     checklistBaseData: function(state) {
-      console.log(state.checklistBaseData)
-      return state.checklistBaseData;
+      // console.log(state.checklistBaseData)
+      return state.checklistBaseData
     },
 
     // 本地初始化 checklist 資料
     accountData : function(state) {
-      console.log('getter accountData')
+      // console.log('getter accountData')
       return state.accountData;
     },
     projectNum: function(state) {
-      return state.projectNum;
+      // console.log('getter projectNum')
+      return state.projectNum
     },
     listData: function(state) {
       console.log('getter listData')
-      return state.accountData.projectData[state.projectNum].listData;
+      return state.accountData.projectData[state.projectNum].listData
     }
   },
 

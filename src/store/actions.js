@@ -5,9 +5,9 @@ export default {
   updateAccountData: function(context) {
     let value;
     let accountData;
-    let tempProject = context.state.accountData.projectData[0];
+    // let tempProject = context.state.accountData.projectData[0];
     if (localStorage.fec_id) {
-      console.log('login and set data')
+      // console.log('login and set data')
       firebase.database().ref(`accountData/${localStorage.fec_id}`).once('value').then(snapshot => {
         value = snapshot.val();
         if (!value) {
@@ -21,17 +21,14 @@ export default {
             "projectData": value.projectData || []
           }
         }
-        if (tempProject !== context.state.projectBaseData) {
-          console.log('add tempProject')
-          accountData.projectData.push(tempProject);
-        }
-        if (context.state.accountData.projectData[0] !== context.state.checklistBaseData) {
-          accountData.projectData.push(context.state.accountData.projectData[0]);
-        }
+        // if (tempProject !== context.state.projectBaseData) {
+        //   // console.log('add tempProject')
+        //   accountData.projectData.push(tempProject);
+        // }
         context.commit('updateAccountData', accountData);
       })
     } else {
-      console.log('no login')
+      // console.log('no login')
       context.commit('updateAccountData', false);
     }
   },
@@ -50,7 +47,7 @@ export default {
       $('#save-sign').addClass('active');
       setTimeout(function() {
         $('#save-sign').removeClass('active');
-      }, 2500);
+      }, 1000);
     })
     
     .catch(function() {
