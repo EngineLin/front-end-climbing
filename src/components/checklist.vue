@@ -1,19 +1,22 @@
 <template>
-  <div class="container">
-    <div class="col-3" id="aside">
+  <b-container fluid>
+    <b-col class="d-none d-md-block col-md-3" id="aside">
       <navigator-container-component></navigator-container-component>
-    </div>
-    <div class="col-9 content" id="js-content">
+    </b-col>
+
+    <b-col class="col-md-9 content" id="js-content">
       <div class="showNoData bg-info" v-if="!accountData.projectData">
         <div class="signPoint"><i class="fa fa-hand-o-left" aria-hidden="true"></i> 點擊左方 + 符號按鈕新增你的新專案!</div>
         <p class="signMessage">你沒有任何資料</p>
       </div>
+
       <checklist-container-component v-else></checklist-container-component>
-    </div>
+    </b-col>
+    
     <img src="./../images/save.png" id="save-sign" alt="Save">
     <div class="save-icon" @click='saveData'></div>
     <div class="infoBox bg-danger"></div>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -55,8 +58,9 @@ export default {
 }
 </script>
 
+
 <style scoped>
-  .container {
+  /* .container {
     align-items: flex-start;
   }
 
@@ -129,14 +133,6 @@ export default {
     height: auto;
     padding: 2px;
     border-radius: 5px;
-  }
-
-  .col-3 {
-    flex: 3;
-  }
-
-  .col-9 {
-    flex:9
-  }
+  } */
 </style>
 

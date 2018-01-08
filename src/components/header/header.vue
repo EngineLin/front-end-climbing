@@ -1,31 +1,59 @@
 <template>
-  <header class="bg-warning">
-    <a href="#" @click="clickLogo($event)">
-      <img src="./../../images/logo.png" alt="Logo image">
-    </a>
-    
-    <div class="header-navbar">
-      <ul class="header-navbar-ul">
-        <router-link to="/overview" class="header-navbar-btn">Overview</router-link>
-        <router-link to="/checklist" class="header-navbar-btn">Project</router-link>
-        <router-link to="/manual" class="header-navbar-btn">Manual</router-link>
-        <a href="#" id="logout" class="bg-secondary" v-if="isLogIn" @click="logOut">Log-out</a>
-        <router-link to="/login" id="router-link-login" class="header-navbar-btn" v-else>Log-in</router-link>
-      </ul>
+  <b-container fluid class="bg-warning header pt-2 pb-2">
+    <b-row>
+      <b-col class="col-md-3">
+        <img src="./../../images/logo.png" alt="Logo image" @click="clickLogo($event)">
+      </b-col>
+      <b-col class="col-md-7 d-none d-md-flex" style="display:flex;align-items:center">
+        <b-row style="width: 100%;display:flex;justify-content:space-around">
+          <router-link to="/overview" class="btn btn-light btn-lg">Overview</router-link>
+          <router-link to="/checklist" class="btn btn-light btn-lg">Project</router-link>
+          <router-link to="/manual" class="btn btn-light btn-lg">Manual</router-link>
+          <a href="#" id="logout" class="btn btn-secondary btn-lg" v-if="isLogIn" @click="logOut">Log-out</a>
+          <router-link to="/login" id="router-link-login" class="btn btn-light btn-lg" v-else>Log-in</router-link>
+        </b-row>
+      </b-col>
+      <b-col class="col-md-2 d-none d-md-flex flex-center">
+        <div id="header-avater">
+          <i class="fa fa-user-circle-o" style="font-size: 100px"
+            aria-hidden="true" @click="clickVisitorAvater"></i>
+        </div>
+      </b-col>
+    </b-row>
+    <div id="header-navbar-btn" class="d-block d-md-none">
+      <b-btn class="btn-lg mb-2 mt-2" variant="info" style="width:100%" @click="clickNavbarBtn">
+        <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+      </b-btn>
     </div>
-    <div id="header-avater"><i class="fa fa-user-circle-o" aria-hidden="true" @click="clickVisitorAvater"></i></div>
-  </header>
+    <div id="header-navbar-zoom" v-show="isShowNavbarZoom">
+      <div class="d-block d-md-none mt-2">
+        <router-link to="/overview" class="btn btn-light btn-lg" style="width:100%">Overview</router-link>
+      </div>
+      <div class="d-block d-md-none mt-2">
+        <router-link to="/checklist" class="btn btn-light btn-lg" style="width:100%">Project</router-link>
+      </div>
+      <div class="d-block d-md-none mt-2">
+        <router-link to="/manual" class="btn btn-light btn-lg" style="width:100%">Manual</router-link>
+      </div>
+      <div class="d-block d-md-none mt-2" v-if="isLogIn">
+        <a href="#" id="logout" class="btn btn-secondary btn-lg" style="width:100%" @click="logOut">Log-out</a>
+      </div>
+      <div class="d-block d-md-none mt-2" v-else>
+        <router-link to="/login" id="router-link-login" class="btn btn-light btn-lg" style="width:100%">Log-in</router-link>
+      </div>
+    </div>
+  </b-container>
 </template>
 
 <script>
   import $ from 'jquery'
-  import Router from 'vue-router'
   import firebase from 'firebase'
 
   export default {
     data: function() {
       return {
-        translateY: `transform: translateY(10px)`
+        translateY: `transform: translateY(10px)`,
+        isShowNavbarZoom: false,
       }
     },
     methods: {
@@ -50,6 +78,9 @@
       clickLogo: function(e) {
         e.preventDefault()
         this.$router.push('overview')
+      },
+      clickNavbarBtn() {
+        this.isShowNavbarZoom = !this.isShowNavbarZoom;
       }
     },
     computed: {
@@ -62,83 +93,15 @@
 </script>
 
 <style scoped>
-  header {
-    height: 100px;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-    height: 100px;
-    width: auto;
-  }
-
-  a img {
+  img {
+    width: 100%;
     height: 100%;
   }
-
-  .header-title {
-    padding: 0 50px;
-  }
-
-  .header-navbar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .header-navbar-ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-  }
-
-  .header-navbar-btn {
-    height: 50px;
-    width: 20%;
-    font-size: 20px;
-    border-radius: 10px 10px 0 0;
-    transform: translateY(10px);
-    background-color: #f1f1f1;
-    font-weight: bold;
-    line-height: 40px;
-    text-align: center;
-  }
-  .router-link-active {
-    background-color: #fff;
-    box-shadow: -3px -3px 5px gray;
-    z-index: 10;
-  }
-  .header-navbar-btn:hover {
+  img:hover {
     cursor: pointer;
   }
 
-  #logout {
-    text-align: center;
-    font-size: 20px;
-    height: 40px;
-    line-height: 40px;
-    width: 20%;
-    border-radius: 10px;
-  }
-
-  #header-avater {
-    height: 100px;
-    width: 100px;
-    margin: 0 80px;
-    font-size: 80px;
-    line-height: 100px;
-  }
-  #header-avater:hover {
+  i:hover {
     cursor: pointer;
   }
 </style>

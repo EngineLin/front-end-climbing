@@ -1,12 +1,16 @@
-import Vue from 'vue'
-import $ from 'jquery'
-import firebase from 'firebase'
-import routers from './router/index.js'
-import store from './store/index.js'
-import header from './components/header/header'
+import Vue from 'vue';
+import $ from 'jquery';
+import firebase from 'firebase';
+import BootstrapVue from 'bootstrap-vue'
+import router from './router/router.js';
+import store from './store/store.js';
+import header from './components/header/header';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // 開啟 Vue 的除錯模式
 Vue.config.debug = true;
+Vue.use(BootstrapVue);
 
 // 初始化 Firebase
 const config = {
@@ -23,7 +27,7 @@ firebase.initializeApp(config);
 const mv = new Vue({
   el: '#app',
   store,
-  router: routers,
+  router,
   components: {
     'header-component': header,
   },
@@ -33,6 +37,6 @@ const uploadData = setTimeout(function() {
   if (!localStorage.fec_id) {
     return;
   }
-  console.log('setTimeout save')
+  
   mv.$store.dispatch('saveData');
 }, 60000)

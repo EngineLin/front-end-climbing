@@ -1,20 +1,24 @@
 <template>
-  <div>
-    <div class="row">
+  <b-container fluid>
+    <b-row class="justify-content-center">
       <input class="project-name bg-primary" maxlength="30" v-model="projectName"></input>
-      <!-- 搜尋覽 -->
-      <!-- <input type="text" class="search-bar js-search-bar" v-model="userSeach" placeholder="項目查詢"> -->
-    </div>
-    <draggable class="checklist-body" v-model='myList' 
-               :options="{ el:'.checklist-body',
-                           animation: 150,
-                           handle: '.js-drag-bar'}">
+    </b-row>
+    
+    <!-- 搜尋覽 -->
+    <!-- <input type="text" class="search-bar js-search-bar" v-model="userSeach" placeholder="項目查詢"> -->
 
-      <!-- // 利用 v-for 遍歷accountData中指定的專案代碼 -->
-      <checklist-card-component class="checklist-item" v-for="(item, index) in listData" 
-        :item="item" :id="item.id" :index="index"></checklist-card-component>
-    </draggable>
-  </div>
+    <b-row class="justify-content-center">
+      <draggable class="checklist-body" v-model='myList' 
+                :options="{ el:'.checklist-body',
+                            animation: 150,
+                            handle: '.js-drag-bar'}">
+
+        <!-- // 利用 v-for 遍歷accountData中指定的專案代碼 -->
+        <checklist-card-component class="checklist-item" v-for="(item, index) in listData" 
+          :item="item" :id="item.id" :index="index"></checklist-card-component>
+      </draggable>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

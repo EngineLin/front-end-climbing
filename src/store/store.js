@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import mutations from './mutations.js'
 import actions from './actions.js'
-import feachUserData from './modules/feachUserData.js'
 import checklistBaseData from './modules/checklist-base-data.json'
 import projectBaseData from './modules/project-base-data.json'
 

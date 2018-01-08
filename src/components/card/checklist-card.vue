@@ -1,17 +1,16 @@
 <template>
-  <div>
-
+  <b-container fluid>
     <!-- 標題顯示的 ItemBox -->
-    <div class="item-wrap item-title" v-if="id[0] === 'Title'" :id="[`hash${index}`]">
-      <div class="item-title-text">{{ id[1] }}</div>
-      <div class="delete-btn delete-btn-of-title"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></div>
-      <div class="drag-bar bg-success js-drag-bar drag-bar-full-height" @click="dragBarAlert()"><i class="fa fa-arrows-v" aria-hidden="true"></i></div>
-    </div> 
+    <b-row class="item-title border border-dark rounded" v-if="id[0] === 'Title'" :id="[`hash${index}`]">
+      <b-col class="text-center m-2">{{ id[1] }}</b-col>
+      <div class="delete-btn delete-btn-of-title" style="display:flex;justify-content:flex-end"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></div>
+      <b-col class="col-1 flex-center bg-success text-dark js-drag-bar " @click="dragBarAlert()"><i class="fa fa-arrows-v" aria-hidden="true"></i></b-col>
+    </b-row> 
 
     <!-- 內容顯示的 ItemBox -->
-    <div class="item-wrap" v-else :id="[`hash${index}`]">
-      <div :class="['check-wrap', 'itemType-' + item.finish.isFinished]">
-        <div class="control-zoom">
+    <b-row class="item-wrap border border-dark rounded mb-2" v-else :id="[`hash${index}`]">
+      <b-col :class="['col-10', 'col-sm-11', 'check-wrap', 'itemType-' + item.finish.isFinished]">
+        <b-row class="control-zoom">
 
           <!--  點擊切換 accountData 中當前的 isFinished 狀態 -->
           <input class="checkbox" type="checkbox" :checked='item.finish.isFinished' @click="toggleFinished()">
@@ -19,19 +18,23 @@
           <!--  v-show 判斷當前 isFinished 決定是否顯示 -->
           <div class="checked-date" v-show="item.finish.isFinished">{{ item.finish.finishedDate }} 完成</div>
           <div class="delete-btn"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></div>
-        </div>
-        <div class="title-zoom">
-          <div class="check-level">{{checklistBaseData[id[0]][id[1]][id[2]].level}}</div>
-          <div class="check-name">{{checklistBaseData[id[0]][id[1]][id[2]].title}}：</div>
-        </div>
-        <div class="check-content">{{checklistBaseData[id[0]][id[1]][id[2]].description}}</div>
-        <div class="detail-btn-box" @click="openDetailBox()">
+        </b-row>
+
+        <b-row class="title-zoom">
+            <div class="check-level ml-2 mr-3 text-danger">{{checklistBaseData[id[0]][id[1]][id[2]].level}}</div>
+            <div class="check-name">{{checklistBaseData[id[0]][id[1]][id[2]].title}}：</div>
+        </b-row>
+
+        <b-row class="check-content justify-content-center align-items-center p-2 mb-2">{{checklistBaseData[id[0]][id[1]][id[2]].description}}</b-row>
+
+        <b-row class="detail-btn-box justify-content-center" @click="openDetailBox()">
           <i :class="[`fa`, `fa-angle-double-down`, `detail-btn`, `detail-btn-${this.index}`, hasDetail ? `text-primary` : '']" aria-hidden="true"></i>
-        </div>
+        </b-row>
+        
         <i class="fa fa-thumbs-o-up finish-sign" aria-hidden="true" v-show='item.finish.isFinished'></i>
-      </div>
-      <div class="drag-bar bg-success js-drag-bar" @click="dragBarAlert()"><i class="fa fa-arrows-v" aria-hidden="true"></i></div>
-    </div>
+      </b-col>
+      <b-col class="col-2 col-sm-1 flex-center bg-success text-dark js-drag-bar" @click="dragBarAlert()"><i class="fa fa-arrows-v" aria-hidden="true"></i></b-col>
+    </b-row>
 
     <!-- 新增筆記按鈕 -->
     <div class="add-note-box"
@@ -76,7 +79,7 @@
       v-if="id[0] !== 'Title' && checklistBaseData[id[0]][id[1]][id[2]].link">
     </div>
 
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -207,7 +210,63 @@
 </script>
 
 <style scoped>
-  .item-wrap {
+  .item-title {
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  .control-zoom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .checkbox {
+    height: 20px;
+    width: 20px;
+    margin: 5px 10px 0 15px;
+  }
+  .checkbox:hover {
+    cursor: pointer;
+  }
+
+  .checked-date {
+    height: 20px;
+    width: auto;
+    margin-right: auto;
+    background-color: yellow;
+    line-height: 20px;
+  }
+
+  .delete-btn {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    color: red;
+    margin: 0 10px 0 auto;
+  }
+  .delete-btn-of-title{
+    margin: 0 10px 0 0 !important;
+  }
+  .delete-btn:hover {
+    cursor: pointer;
+  }
+
+  .title-zoom {
+    display: flex;
+  }
+
+  .finish-sign {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    font-size: 5vh;
+  }
+</style>
+
+
+<style scoped>
+  /* .item-wrap {
     position: relative;
     margin: 10px 0 10px 0;
     display: flex;
@@ -306,24 +365,6 @@
     font-weight: bold;
   }
 
-  .drag-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    min-width: 20px;
-    max-width: 20px;
-    flex-grow: 0;
-    font-size: 25px;
-  }
-  .drag-bar:hover {
-    cursor: pointer;
-  }
-
-  .drag-bar-full-height {
-    height: 100%;
-  }
-
   .add-note-box {
     box-sizing: border-box;
     height: 3vh;
@@ -418,6 +459,6 @@
     right: 10%;
     top: 30%;
     font-size: 5vh;
-  }
+  } */
 </style>
 

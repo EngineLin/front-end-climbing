@@ -6,7 +6,7 @@ import manualComponent from './../components/manual.vue'
 import loginComponent from './../components/login.vue'
 import signinComponent from './../components/signin.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [

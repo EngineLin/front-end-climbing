@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<h1 style="display:none;">Front-End Climbing</h1>
+<h1>Front-End Climbing</h1>
 <div id="app">
   <header-component></header-component>
   <router-view></router-view>
@@ -33,85 +33,30 @@
 
 <script src="./dist/build.js"></script>
 
-<!-- 全域共用的 CSS，如果太過龐大再拆分出來 -->
+<!-- 全域共用的 CSS -->
 <style>
   body {
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
     background-color: #f4f4f4;
     box-sizing: border-box;
-    overflow: hidden;
   }
 
-  .container {
-    position: relative;
-    width: auto;
-    height: calc(100vh - 120px);
-    margin: 10px 20px;
+  .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    box-shadow: -2px -2px 5px gray;
-    border-radius: 5px;
   }
+</style>
 
-  .row {
-    display: flex;
+<style scoped>
+  h1 {
+    position: absolute;
+    left: -9999px;
   }
-
-  /* color follow at bootstrap style */
-  .text-primary {
-    color: #007bff;
-  }
-  .text-secondary {
-    color: #868e96;
-  }
-  .text-success {
-    color: #28a745;
-  }
-  .text-info {
-    color : #17a2b8;
-  }
-  .text-warning {
-    color: #ffc107;
-  }
-  .text-danger {
-    color: #dc3545;
-  }
-  .text-light {
-    color: #f8f9fa;
-  }
-  .text-dark {
-    color: #343a40;
-  }
-  .bg-primary {
-    background-color: #007bff;
-  }
-  .bg-secondary {
-    background-color: #868e96;
-  }
-  .bg-success {
-    background-color: #28a745;
-  }
-  .bg-info {
-    background-color : #17a2b8;
-  }
-  .bg-warning {
-    background-color: #ffc107;
-  }
-  .bg-danger {
-    background-color: #dc3545;
-  }
-  .bg-light {
-    background-color: #f8f9fa;
-  }
-  .bg-dark {
-    background-color: #343a40;
-  }
-  /**/
 </style>
 
 </body>
