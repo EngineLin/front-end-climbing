@@ -80,13 +80,13 @@ export default {
   #save-sign {
     position: fixed;
     bottom: 10px;
-    right: calc(10% + 15px);
+    right: 5%;
     opacity: 0;
-    transition: 0.5s;
+    transition: 2s;
   }
   #save-sign.active {
     opacity: 1;
-    transform: translateY(-20px);
+    transform: translateY(-80px);
   }
 
   #infoBox {
