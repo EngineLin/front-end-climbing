@@ -38,24 +38,26 @@
 
   export default {
     methods: {
-      sendOut: function() {
+      sendOut() {
         let email = $('#email').val();
         let password = $('#password').val();
+
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(confirmationResult => {
           let payload = {
             loginState: true,
-            fec_id: confirmationResult.uid
+            fec_id: confirmationResult.uid,
           };
           this.$store.commit('updateFECId', payload);
           this.$store.dispatch('updateAccountData');
-          this.$router.push('checklist')
+          this.$router.push('checklist');
         })
         .catch(error => {
           let errorCode = error.code;
           let errorMessage = error.message;
+
           $('.message').text(errorMessage);
-        })
+        });
       },
     }
   }

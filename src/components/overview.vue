@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="js-container">
+  <b-container fluid>
       <b-row class="banner-1">
         <b-col class="flex-center" style="flex-direction: column;">
           <h2 class="text-light">What is Front-end Climbing？</h2>
@@ -10,7 +10,7 @@
             使你的網頁開發細膩度更上一層樓。
           </p>
         </b-col>
-        <img src="./../images/forkme.png" class="forkme" alt="fork me" @click="linkToGitHub">
+        <img src="./../images/forkme.png" class="forkme" alt="fork me banner" @click="linkToGitHub">
       </b-row>
 
       <b-row class="banner-2 flex-center m-3 mb-5" style="flex-direction: row-reverse">
@@ -47,18 +47,20 @@
   import $ from 'jquery'
 
   export default {
-    methods: {
-      linkToGitHub: function() {
-        window.location.href = 'https://github.com/EngineLin/front-end-climbing';
-      }
-    },
-    data: function() {
+    data() {
       return {
         hasShowBanner2: false,
         hasShowBanner3: false,
       }
     },
-    mounted: function() {
+
+    methods: {
+      linkToGitHub() {
+        window.location.href = 'https://github.com/EngineLin/front-end-climbing';
+      }
+    },
+
+    mounted() {
       window.addEventListener('scroll', () => {
         let windowScrollY = window.scrollY;
         let windowInnerHeight = window.innerHeight;

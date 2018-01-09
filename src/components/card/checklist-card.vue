@@ -1,33 +1,35 @@
 <template>
   <b-container fluid>
     <!-- 標題顯示的 ItemBox -->
+    <!-- v-if -->
     <b-row class="item-title border border-dark rounded" v-if="id[0] === 'Title'" :id="[`hash${index}`]">
       <b-col class="text-center m-2">{{ id[1] }}</b-col>
-      <div class="delete-btn delete-btn-of-title" style="display:flex;justify-content:flex-end"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></div>
-      <b-col class="col-1 flex-center bg-success text-dark js-drag-bar " @click="dragBarAlert()"><i class="fa fa-arrows-v" aria-hidden="true"></i></b-col>
+      <b-row class="delete-btn delete-btn-of-title text-danger justify-content-end"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></b-row>
+      <b-col cols="1" class="flex-center bg-success text-dark js-drag-bar " @click="dragBarAlert()"><i class="fa fa-arrows-v" aria-hidden="true"></i></b-col>
     </b-row> 
 
     <!-- 內容顯示的 ItemBox -->
-    <b-row class="item-wrap border border-dark rounded mb-2" v-else :id="[`hash${index}`]">
+    <!-- v-else -->
+    <b-row class="border border-dark rounded mb-2" :id="[`hash${index}`]" v-else>
       <b-col :class="['col-10', 'col-sm-11', 'check-wrap', 'itemType-' + item.finish.isFinished]">
-        <b-row class="control-zoom">
+        <b-row class="align-items-center">
 
           <!--  點擊切換 accountData 中當前的 isFinished 狀態 -->
           <input class="checkbox" type="checkbox" :checked='item.finish.isFinished' @click="toggleFinished()">
 
           <!--  v-show 判斷當前 isFinished 決定是否顯示 -->
-          <div class="checked-date" v-show="item.finish.isFinished">{{ item.finish.finishedDate }} 完成</div>
-          <div class="delete-btn"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></div>
+          <div class="checked-date bg-warning" v-show="item.finish.isFinished">{{ item.finish.finishedDate }} 完成</div>
+          <b-row class="delete-btn text-danger justify-content-end"><i class="fa fa-times" aria-hidden="true" @dblclick="deleteItem()" @click="deleteAlert()"></i></b-row>
         </b-row>
 
-        <b-row class="title-zoom">
-            <div class="check-level ml-2 mr-3 text-danger">{{checklistBaseData[id[0]][id[1]][id[2]].level}}</div>
-            <div class="check-name">{{checklistBaseData[id[0]][id[1]][id[2]].title}}：</div>
+        <b-row>
+            <div class="ml-2 mr-3 text-danger">{{checklistBaseData[id[0]][id[1]][id[2]].level}}</div>
+            <div>{{checklistBaseData[id[0]][id[1]][id[2]].title}}：</div>
         </b-row>
 
-        <b-row class="check-content justify-content-center align-items-center p-2 mb-2">{{checklistBaseData[id[0]][id[1]][id[2]].description}}</b-row>
+        <b-row class="justify-content-center align-items-center p-1 mb-2">{{checklistBaseData[id[0]][id[1]][id[2]].description}}</b-row>
 
-        <b-row class="detail-btn-box justify-content-center" @click="openDetailBox()">
+        <b-row class="justify-content-center" @click="openDetailBox()">
           <i :class="[`fa`, `fa-angle-double-down`, `detail-btn`, `detail-btn-${this.index}`, hasDetail ? `text-primary` : '']" aria-hidden="true"></i>
         </b-row>
         
@@ -37,47 +39,51 @@
     </b-row>
 
     <!-- 新增筆記按鈕 -->
-    <div class="add-note-box"
-         :id="[`add-note-box-${index}`]"
-         style="display: none;"
-         v-if="id[0] !== 'Title' && !item.note"
-         @click="addNewNote"
-         v-text="`+ 新增筆記`">
-    </div>
+    <b-row class="justify-content-center">
+      <b-btn variant="primary" class="add-note-box mb-2"
+          :id="[`add-note-box-${index}`]"
+          style="display: none;"
+          v-if="id[0] !== 'Title' && !item.note"
+          @click="addNewNote"
+          v-text="`+ 新增筆記`">
+      </b-btn>
+    </b-row>
 
     <!-- 筆記編輯器 -->
-    <div class="add-note-textarea"
+    <b-row class="add-note-textarea border border-dark rounded mb-2"
          :id="[`add-note-textarea-${index}`]"
          style="display: none"
          v-if="id[0] !== 'Title' && !item.note">
-      <textarea cols="20" rows="10" :id="[`add-note-textarea-value-${index}`]"></textarea>
-      <i class="fa fa-check" aria-hidden="true" @click="clickYes"></i>
-      <i class="fa fa-times" aria-hidden="true" @click="clickNo"></i>
-    </div>
+      <textarea cols="20" rows="10" :id="[`add-note-textarea-value-${index}`]" class="col col-10 col-md-11"></textarea>
+      <b-col cols="2" md="1" class="justify-content-around align-items-center" style="display:none;display:flex;flex-direction:column;">
+        <i class="fa fa-times text-danger" aria-hidden="true" @click="clickNo"></i>
+        <i class="fa fa-check text-success" aria-hidden="true" @click="clickYes"></i>
+      </b-col>
+    </b-row>
 
     <!-- 顯示筆記的 box -->
-    <div class="note-box" 
+    <b-row class="note-box border border-dark rounded justify-content-around mr-auto ml-auto mb-2" 
       :id="[`note-box-${index}`]" 
       style="display: none;"
       v-if="id[0] !== 'Title' && item.note"
-      v-html="deleteNoteBoxBtn + item.note">
-    </div>
+      v-html="item.note + deleteNoteBoxBtn">
+    </b-row>
 
     <!-- 顯示範例的 box -->
-    <div class="detail-example-box" 
+    <b-row class="detail-example-box border border-dark rounded justify-content-center align-items-center mr-auto pt-1 ml-auto mb-2" 
       :id="[`detail-example-box-${index}`]" 
-      style="display: none;" 
+      style="display: none; background-color: rgba(192, 192, 192 ,.5)" 
       v-html="checklistBaseData[id[0]][id[1]][id[2]].example" 
       v-if="id[0] !== 'Title' && checklistBaseData[id[0]][id[1]][id[2]].example">
-    </div>
+    </b-row>
     
     <!-- 顯示連結的 box -->
-    <div class="detail-link-box" 
+    <b-col class="detail-link-box border border-dark rounded text-center p-1 mr-auto ml-auto mb-2" 
       :id="[`detail-link-box-${index}`]" 
       style="display: none;" 
       v-html="checklistBaseData[id[0]][id[1]][id[2]].link" 
       v-if="id[0] !== 'Title' && checklistBaseData[id[0]][id[1]][id[2]].link">
-    </div>
+    </b-col>
 
   </b-container>
 </template>
@@ -88,11 +94,11 @@
 
   export default {
     props:['item', "id", 'index'],
-    data: function() {
+    data() {
       return {
         // deleteDetailExampleBoxBtn: `<div class="delete-btn"><i class="fa fa-times delete-detail-example-box-${this.index}" aria-hidden="true"></i></div>`,
         // deleteDetailLinkBoxBtn: `<div class="delete-btn"><i class="fa fa-times delete-detail-link-box-${this.index}" aria-hidden="true"></i></div>`,
-        deleteNoteBoxBtn: `<div class="delete-btn"><i class="fa fa-times delete-note-box-${this.index}" aria-hidden="true"></i></div>`,
+        deleteNoteBoxBtn: `<div class="delete-btn"><i class="fa fa-times text-danger delete-note-box-${this.index}" aria-hidden="true"></i></div>`,
         isAddNote: false,
         hasAddTextarea : false,
         hasAddBox: this.item.note ? false : true,
@@ -101,10 +107,10 @@
     },
     computed: {
       ...mapGetters(['checklistBaseData']),
-      note: function() {
+      note() {
         return this.item.note
       },
-      hasDetail: function() {
+      hasDetail() {
         // 判斷有詳細資料(包括私人筆記)才為箭頭加上顏色
         return (this.item.note || this.checklistBaseData[this.id[0]][this.id[1]][this.id[2]].example || this.checklistBaseData[this.id[0]][this.id[1]][this.id[2]].link)
         ? true
@@ -113,7 +119,7 @@
     },
     methods: {
       // 切換當前點擊 item 的完成狀態，同時改變 accountData 內的資料
-      toggleFinished: function() {
+      toggleFinished() {
         const finishedDate = new Date()
 
         //整理日期格式
@@ -129,14 +135,14 @@
         this.$store.commit('toggleFinished', { index: this.index, value: value, date: date })
       },
 
-      addNewNote: function() {
+      addNewNote() {
         $(`#add-note-textarea-${this.index}`).slideDown('slow');
         $(`#add-note-box-${this.index}`).slideUp('slow');
         this.hasAddTextarea = true;
         this.hasAddBox = false;
       },
 
-      clickYes: function() {
+      clickYes() {
         let value = $(`#add-note-textarea-value-${this.index}`).val();
         value = value.replace(/\n/g,"<br />");
         let payload = { index: this.index, value: value };
@@ -146,7 +152,7 @@
         this.hasAddBox = false;
       },
 
-      clickNo: function() {
+      clickNo() {
         $(`#add-note-textarea-${this.index}`).slideUp('slow');
         $(`#add-note-box-${this.index}`).slideDown('slow');
         $(`#add-note-textarea-value-${this.index}`).val('');
@@ -154,16 +160,16 @@
         this.hasAddBox = true;
       },
 
-      deleteAlert: function(e) {
-        $('.infoBox').text('雙擊以左鍵以刪除資料。')
-        $('.infoBox').fadeIn(300)
+      deleteAlert(e) {
+        $('#infoBox').text('雙擊以左鍵以刪除資料。')
+        $('#infoBox').fadeIn(300)
       },
 
-      deleteItem: function() {
+      deleteItem() {
         this.$store.commit('deleteItem', this.index)
       },
 
-      openDetailBox: function() {
+      openDetailBox() {
         this.deg = this.deg === '0deg' ? '180deg' : '0deg';
         $(`.detail-btn-${this.index}`).css({'-webkit-transform' : `rotate(${this.deg})`,
                                             '-moz-transform' : `rotate(${this.deg})`,
@@ -181,18 +187,18 @@
         $(`#detail-link-box-${this.index}`).slideToggle("slow");
       },
 
-      dragBarAlert: function() {
-        $('.infoBox').text('按住滑鼠左鍵拖動項目。')
-        $('.infoBox').fadeIn(300)
-        console.log(this.item.finish.isFinished)
+      dragBarAlert() {
+        $('#infoBox').text('按住滑鼠左鍵拖動項目。')
+        $('#infoBox').fadeIn(300)
       }
     },
-    updated: function() {
+    updated() {
       if (this.isAddNote) {
         $(`#note-box-${this.index}`).slideToggle("slow");
       }
     },
-    mounted: function() {
+    mounted() {
+      //#TODO Delete Note function
       $(`.delete-note-box-${this.index}`).click(() => {
         console.log(this)
         // this.$store.commit('deleteNoteBox', this.index);
@@ -215,11 +221,6 @@
     width: 80%;
   }
 
-  .control-zoom {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .checkbox {
     height: 20px;
     width: 20px;
@@ -231,68 +232,7 @@
 
   .checked-date {
     height: 20px;
-    width: auto;
-    margin-right: auto;
-    background-color: yellow;
     line-height: 20px;
-  }
-
-  .delete-btn {
-    height: 20px;
-    width: 20px;
-    font-size: 20px;
-    line-height: 20px;
-    color: red;
-    margin: 0 10px 0 auto;
-  }
-  .delete-btn-of-title{
-    margin: 0 10px 0 0 !important;
-  }
-  .delete-btn:hover {
-    cursor: pointer;
-  }
-
-  .title-zoom {
-    display: flex;
-  }
-
-  .finish-sign {
-    position: absolute;
-    right: 10%;
-    top: 30%;
-    font-size: 5vh;
-  }
-</style>
-
-
-<style scoped>
-  /* .item-wrap {
-    position: relative;
-    margin: 10px 0 10px 0;
-    display: flex;
-    border: solid 1px black;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px gray;
-  }
-
-  .item-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    height: 5vh;
-    margin: 10px auto;
-    width: 80%;
-  }
-
-  .item-title-text {
-    margin: 0 auto;
-  }
-
-  .check-wrap {
-    width: auto;
-    flex-grow: 1;
-    padding: 5px;
   }
 
   .itemType-true {
@@ -300,34 +240,11 @@
     transition: 0.5s; 
   }
 
-  .control-zoom {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .checkbox {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-  }
-  .checkbox:hover {
-    cursor: pointer;
-  }
-
-  .checked-date {
-    height: 20px;
-    width: auto;
-    margin-right: auto;
-    background-color: yellow;
-    line-height: 20px;
-  }
-
   .delete-btn {
     height: 20px;
     width: 20px;
     font-size: 20px;
     line-height: 20px;
-    color: red;
     margin: 0 10px 0 auto;
   }
   .delete-btn-of-title{
@@ -337,77 +254,23 @@
     cursor: pointer;
   }
 
-  .title-zoom {
-    display: flex;
+  .finish-sign {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    font-size: 5vh;
   }
 
-  .check-level {
-    margin: 0 20px;
-    color: red;
-  }
-
-  .check-name {
-    font-weight: bold;
-  }
-
-  .check-content {
-    padding: 30px;
-    text-align: center;
-  }
-
-  .detail-btn-box {
-    text-align: center;
-  }
-  .detail-btn:hover {
-    cursor: pointer;
-  }
-  .fa-times:hover {
-    font-weight: bold;
-  }
-
-  .add-note-box {
-    box-sizing: border-box;
-    height: 3vh;
-    width: 30%;
-    border: solid 1px black;
-    border-radius: 5px;
-    margin: 0 auto 5px;
-    padding: 3px 0;
-    text-align: center;
-    font-size: 20px;
-    box-shadow: 2px 2px 5px grey;
-  }
   .add-note-box:hover {
     cursor: pointer;
-    border: 2px solid red;
   }
 
-  .add-note-textarea {
-    position: relative;
-    border: solid 1px black;
-    margin: 0 10px 5px;
-    text-align: center;
-    box-shadow: 2px 2px 5px gray;
-  }
-
-  .add-note-textarea textarea {
-    width: 100%;
-    height: 100%; 
-    padding: 0;
-    margin: 0;
-    border-width: 0;
-    font-size: 24px;
-  }
   .add-note-textarea textarea:focus {
     outline: none !important;
   }
 
   .add-note-textarea .fa-check {
-    position: absolute;
-    font-size: 24px;
-    color: green;
-    right: 20%;
-    bottom: 0;
+    font-size: 3rem;
   }
   .add-note-textarea .fa-check:hover {
     cursor: pointer;
@@ -415,50 +278,18 @@
   }
 
   .add-note-textarea .fa-times {
-    position: absolute;
-    font-size: 24px;
-    color: red;
-    right: 10%;
-    bottom: 0;
+    font-size: 3rem;
   }
   .add-note-textarea .fa-times:hover {
     cursor: pointer;
     font-weight: bold;
   }
 
-  .note-box {
-    border: solid 1px black;
-    margin: 0 10px 5px;
-    padding: 3px 0;
-    text-align: center;
-    box-shadow: 2px 2px 5px gray;
-    font-size: 20px;
+  .fa-angle-double-down:hover {
+    cursor: pointer;
   }
 
-  .detail-example-box {
-    border: solid 1px black;
-    background-color: rgba(100, 100 ,100 , .1);
-    margin: 0 10px 5px;
-    padding: 3px 0;
-    text-align: center;
-    color: gray;
-    box-shadow: 2px 2px 5px gray;
+  .fa-times:hover {
+    font-weight: bold;
   }
-
-  .detail-link-box {
-    border: solid 1px black;
-    margin: 0 10px 5px;
-    text-align: center;
-    box-shadow: 2px 2px 5px gray;
-    padding: 1em;
-    line-height: 30px;
-  }
-
-  .finish-sign {
-    position: absolute;
-    right: 10%;
-    top: 30%;
-    font-size: 5vh;
-  } */
 </style>
-

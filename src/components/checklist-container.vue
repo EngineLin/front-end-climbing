@@ -4,7 +4,7 @@
       <input class="project-name bg-primary" maxlength="30" v-model="projectName"></input>
     </b-row>
     
-    <!-- 搜尋覽 -->
+    <!-- #TODO 搜尋覽 -->
     <!-- <input type="text" class="search-bar js-search-bar" v-model="userSeach" placeholder="項目查詢"> -->
 
     <b-row class="justify-content-center">
@@ -32,11 +32,11 @@
       'checklist-card-component': checklistCard,
       draggable,
     },
-    // data: function() {
-    //   return {
-    //     userSeach: '',
-    //   }
-    // },
+    data() {
+      return {
+        userSeach: '',
+      }
+    },
     computed: {
       ...mapGetters([
         'accountData',

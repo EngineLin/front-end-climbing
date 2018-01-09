@@ -110,7 +110,8 @@
       <b-col class="flex-center" lg="6">
         <p class="text-center">
           當您需要快速尋找項目時，使用左方的導覽列表，<br><br>
-          點選左方導覽列表後，會自動幫您找到對應項目的位置。
+          點選左方導覽列表後，會自動幫您找到對應項目的位置。<br><br><br>
+          <span class="text-info">此功能只平板或桌面電腦可以使用。</span>
         </p>
       </b-col>
       <b-col lg="6" class="flex-center">
@@ -175,57 +176,3 @@
     </b-row>
   </b-container>
 </template>
-<style scoped>
-  /* .container {
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow-y: scroll;
-  }
-
-  .row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .imgBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .row-content {
-    flex-direction: row !important;
-  }
-
-  h2 {
-    line-height: 128px;
-    font-size: 36px;
-    padding: 0;
-    margin: 0;
-  }
-
-  h3 {
-    font-size: 24px;
-    padding: 0;
-    margin-bottom: 5%;
-    text-decoration: underline;
-  }
-
-  img {
-    width: 70%;
-    margin: 0;
-  }
-
-  p {
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    font-weight: bold;
-  } */
-</style>
-

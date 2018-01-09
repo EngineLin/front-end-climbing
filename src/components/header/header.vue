@@ -50,16 +50,15 @@
   import firebase from 'firebase'
 
   export default {
-    data: function() {
+    data() {
       return {
         translateY: `transform: translateY(10px)`,
         isShowNavbarZoom: false,
       }
     },
     methods: {
-      logOut: function() {
+      logOut() {
         firebase.auth().signOut()
-        
         .then(() => {
           let payload = { loginState: false, fec_id: '' }
           this.$store.commit('updateFECId', payload)
@@ -67,15 +66,15 @@
           this.$router.push('checklist')
           alert('您已經成功登出')
         })
-        
         .catch((error) => {
           alert(`登出出現問題: ${error}`)
         })
       },
-      clickVisitorAvater: function() {
+
+      clickVisitorAvater() {
         this.$router.push('login')
       },
-      clickLogo: function(e) {
+      clickLogo(e) {
         e.preventDefault()
         this.$router.push('overview')
       },
@@ -84,7 +83,7 @@
       }
     },
     computed: {
-      isLogIn: function() {
+      isLogIn() {
         return this.$store.state.loginState
       },
     },

@@ -1,21 +1,26 @@
 <template>
   <b-container fluid>
-    <b-col class="d-none d-md-block col-md-3" id="aside">
-      <navigator-container-component></navigator-container-component>
-    </b-col>
+    <b-row>
+      <b-col class="d-none d-md-block col-md-3" id="aside">
+        <navigator-container-component></navigator-container-component>
+      </b-col>
 
-    <b-col class="col-md-9 content" id="js-content">
-      <div class="showNoData bg-info" v-if="!accountData.projectData">
-        <div class="signPoint"><i class="fa fa-hand-o-left" aria-hidden="true"></i> 點擊左方 + 符號按鈕新增你的新專案!</div>
-        <p class="signMessage">你沒有任何資料</p>
-      </div>
+      <b-col class="col-md-9 content" id="js-content">
 
-      <checklist-container-component v-else></checklist-container-component>
-    </b-col>
+        <!-- v-if -->
+        <div class="showNoData bg-info" v-if="!accountData.projectData">
+          <div class="signPoint"><i class="fa fa-hand-o-left" aria-hidden="true"></i> 點擊左方 + 符號按鈕新增你的新專案!</div>
+          <p class="signMessage">你沒有任何資料</p>
+        </div>
+
+        <!-- v-else -->
+        <checklist-container-component v-else></checklist-container-component>
+      </b-col>
+    </b-row>
     
     <img src="./../images/save.png" id="save-sign" alt="Save">
-    <div class="save-icon" @click='saveData'></div>
-    <div class="infoBox bg-danger"></div>
+    <div id="save-icon" @click='saveData'></div>
+    <div id='infoBox' class="rounded bg-danger text-dark p-1"></div>
   </b-container>
 </template>
 
@@ -30,109 +35,67 @@ export default {
     'navigator-container-component': navigatorContainer,
     'checklist-container-component': checklistContainer,
   },
-  data: function() {
-    return {
-
-    }
-  },
   computed: {
     ...mapGetters([ 'accountData' ])
   },
   methods: {
-    saveData: function() {
-      this.$store.dispatch('saveData')
+    saveData() {
+      this.$store.dispatch('saveData');
     }
   },
-  created: function() {
+
+  created() {
     // 點進 checklist 之後就在第一時間將預設的 accountData 做修改
     this.$store.dispatch('updateAccountData');
 
     // 綁定 infoBox 跟著滑鼠光標
-    $(window).on('mousemove', (e) => {
-      let left = e.clientX
-      let top = e.clientY
-      $('.infoBox').css({ 'left': `${left - 100}px`, 'top': `${top - 80}px`})
-      $('.infoBox').fadeOut(300)
+    $(window).on('mousemove', e => {
+      const left = e.pageX;
+      const top = e.pageY;
+
+      $('#infoBox').css({ 'left': `${left}px`, 'top': `${top + 20}px`});
+      $('#infoBox').fadeOut(300);
     })
   },
 }
 </script>
 
-
 <style scoped>
-  /* .container {
-    align-items: flex-start;
-  }
-
-  .showNoData {
-    margin: 10vh auto;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: -2px -2px 5px grey;
-    width: 60%;
-    height: 30vh;
-  }
-
-  .signPoint {
-    text-align: left;
-    font-size: 20px;
-    margin: 20px 10px;
-  }
-
-  .signMessage {
-    text-align: center;
-    font-size: 40px;
-    margin-top: calc((30vh - 73px) / 2)
-  }
-
-  #aside {
-    height: 100%;
-    width: 100%;
-    margin-right: 30px;
-  }
-
-  .content {
-    height: 100%;
-    width: 100%;
-    overflow-y: scroll;
-  }
-
-  #save-sign {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s;
-    position: fixed;
-    right: 5%;
-    bottom: calc(5% + 60px);
-    width: 50px;
-    height: 50px;
-  }
-  #save-sign.active {
-    opacity: 1;
-    transform: translateY(-20px);
-  }
-  .save-icon {
+  #save-icon {
     background-image: url('./../images/save-button.svg');
     position: fixed;
-    right: 5%;
-    bottom: 5%;
+    z-index: 100;
+    bottom: 10px;
+    right: 10%;
     width: 60px;
     height: 60px;
     color: blue;
     transition: 0.5s;
   }
-  .save-icon:hover {
+  #save-icon:hover {
     cursor: pointer;
     transform: translateY(-10px)
   }
 
-  .infoBox {
+  #save-sign {
+    position: fixed;
+    bottom: 10px;
+    right: calc(10% + 15px);
+    opacity: 0;
+    transition: 0.5s;
+  }
+  #save-sign.active {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+
+  #infoBox {
     display: none;
     position: absolute;
+    z-index: 1000;
     width: auto;
     height: auto;
-    padding: 2px;
-    border-radius: 5px;
-  } */
+  }
 </style>
+
 
